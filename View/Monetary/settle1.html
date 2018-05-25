@@ -5,7 +5,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>后台管理</title>
 	<include file="common:css" />
-	<script src="__PUBLIC__/admin/js/branch.js"></script>
 </head>
 <style type="text/css">
 	.submit_form {position: absolute;z-index:1;width: 100%;}
@@ -57,8 +56,8 @@
 	#khlx {height: 30px;}
 	#gjzt {height: 30px;}
 	button, input, select, textarea {height: 30px;}
+
 	#example1_wrapper .row .col-sm-6:nth-child(2){float: none;opacity: 0}
-	.dsh{background:rgb(232, 184, 184)}
 </style>
  <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -93,7 +92,15 @@
 									 至<input type="text" onClick="WdatePicker()" name="endtime" value="<?php echo $_GET['endtime']?>" class="form-control input-sm" placeholder="" aria-controls="example1" autocomplete="off">
 
 									 <div id="example1_filter" style="text-align:left;display:inline-block;margin-left:38px">
-										 部门：<select id="sbranch" name="branch">
+										 部门：<select id="branch" name="branch">
+										 <option disabled="disabled" selected>选择分部</option>
+
+										 <option value=11>宝安1部</option>
+										 <option value=10>宝安2部</option>
+										 <option value=19>现金1部</option>
+										 <option value=1>现金2部</option>
+										 <option value=6>现金3部</option>
+										 <option value=33>现金4部</option>
 									 </select>
 									 </div>
 
@@ -119,24 +126,25 @@
                           	<thead>
 	                           <tr>
 	                           		<th width="5%">ID</th>
-	                           		<th width="4%">姓名</th>
+	                           		<th width="5%">姓名</th>
 								  	<th width="4%">类型</th>
 						   			<th width="6%">贷款金额</th>
 	                                <th width="3%">期数</th>
 								  	<th width="6%">保证金比例</th>
 								  	<th width="6%">放款日期</th>
 								  	<th width="6%">到期日期</th>
-								  	<th width="4%">业务员</th>
+								  	<th width="5%">业务员</th>
 								  	<th width="5%">身份证</th>
-									<th width="5%">状态</th>
+									<th width="6%">手续费</th>
 									<th width="3%">保证金</th>
 	                                <th width="6%">累计利息</th>
-							        <th width="11%">操作</th>
+	                                <!-- <th width="5%">滞纳金</th> -->
+							        <th width="8%">操作</th>
 	                           </tr>
                           	</thead>
 							<tbody style="text-align: center;">
 							<foreach name="cashinfo" item="value">
-								<tr <?php echo $value['audit_status']==5?"class='dsh'":'' ?>>
+								<tr>
 									<td><input  type="checkbox" name="id[]" value="{$value.id}">&nbsp;&nbsp;{$value.id}</td>
 									<td>{$value.name}</td>
 									<td><?php echo $value['type']==1?'速分贷':'速贷' ?></td>
@@ -148,11 +156,7 @@
 									<td>{$value.salesman}</td>
 									<!-- <td>{$value.cardid}</td> -->
 									<td>{$value.cardid|substr=0,3}***{$value.cardid|substr=13,17}</td>
-									<td><?php if($value['audit_status']==5){
-										echo "待审核";
-										}else if($value['audit_status']==4){
-										echo "已审核";}
-									 ?></td>
+									<td>{$value.fee}</td>
 									<td>{$value.margin}</td>
 									<td>{$value.accumulative}</td>
 									<!-- <td>{$value.latefee}</td> -->
@@ -164,7 +168,6 @@
 									<if condition="in_array('88',$_SESSION['level'])">
 									     <a class="btn btn-danger btn-sm" href="javascript:if(confirm('确实要删除该内容吗?'))location='/Admin/Monetary/dels/id/{$value.id}'"><i class="fa fa-trash" style="font-size:16px;"></i></a>
 									</if>
-									<a href="/Admin/Monetary/setState/id/{$value.id}/v/4" class='btn btn-primary btn-sm'>审核</a>
 									</td>
 								</tr>
 							</foreach>
@@ -174,7 +177,6 @@
 						 
 						</form>
                       </div>
-                      <div class="page">{$show}</div>
                     </div>
                   </div>
                 </div>
@@ -390,12 +392,7 @@
         }
 
     });
-
-	//加载部门
-	window.onload=(function(){
-       	sbranch();
-       });
-
+	
 	</script>  
   </body>
 </html>

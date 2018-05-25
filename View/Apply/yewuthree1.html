@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="box" style="height: 650px;">
-                     <h3 class="box-title"><a href="/Admin/Monetary/listCustomer">现金客户</a>><a style="cursor: pointer;" class="goback" href="http://47.92.119.237/Admin/Monetary/yewuall?id={$id}&ss={$sid}">返回流程条</a></h3>
+                     <h3 class="box-title"><a href="/Admin/Monetary/listCustomer">现金客户</a>><a style="cursor: pointer;" class="goback">还回流程条</a></h3>
                         <div class="information">
                            <h4 class="h4">产品确认</h4>
                         <form action="/Admin/Apply/qrfy" method="post" id="info_form2">
@@ -47,20 +47,6 @@
                             <div class="rowleft">
                                 <label class="charge"><input type="checkbox" class="identity">保证金:</label>
                                 <input type="number" name="bond"  value="{$data['bond']}">
-                            </div>
-                            <div class="rowleft">
-                                <label class="charge"><input type="checkbox" class="identity">是否有捆绑业务:</label>
-                                <label><input type="radio" class="binded" name="bundlingService" <?php if($data['bundlingservice']=="1") echo checked ?> value="1">是</label>
-                                <label><input type="radio" class="bind" name="bundlingService" <?php if($data['bundlingservice']=="2") echo checked ?> value="2">否</label>
-                            </div>
-                            <div class="rowleft dpersonnel" style="display: none">
-                                <label class="charge"><input type="checkbox" class="identity">渠道人员:</label>
-                                <select class="cPersonnel" name="channelPersonnel" style="width: 88px;">            
-                                            <option value="0">请选择</option>
-                                            <option <?php echo $data['channelpersonnel']==61?'selected':'' ?> value="61">陈正伟</option>
-                                            <option value="60" <?php echo $data['channelpersonnel']==60?'selected':'' ?> >谭儒辉</option>
-                                            <option value="167" <?php echo $data['channelpersonnel']==167?'selected':'' ?> >罗嘉欢</option>
-                                        </select>
                             </div>
                             <input type="hidden" value="{$data['cid']}" name="cid" id="ids">
                             <input type="submit" style="margin-left:68px;" value="提&nbsp;&nbsp;交" class="tjs">
@@ -94,19 +80,6 @@
     $(".goback").click(function(){
         window.history.back();
         });
-
-    $(".binded").click(function(){
-        $(".dpersonnel").show();
-    });
-    $(".bind").click(function(){
-        $(".dpersonnel").hide();
-    });
-
-    $(function(){
-        if($(".binded").attr('checked')){
-            $(".dpersonnel").show();
-        }
-    });
 </script>
 </body>
 </html>

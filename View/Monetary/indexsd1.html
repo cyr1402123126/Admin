@@ -95,20 +95,22 @@
 
 
 
-						 <form action="/Admin/Monetary/indexsd" method="GET" class="submit_form">
+						 <form action="/Admin/Uclient/index" method="GET" class="submit_form">
 							 <div id="example1_filter" class="dataTables_filter" style="text-align:left;display:inline-block;">
 								 <label id="sjss">
 									 日期<input type="text" onClick="WdatePicker()" name="stime" value="<?php echo $_GET['stime']?>" class="form-control input-sm" placeholder="" aria-controls="example1" autocomplete="off">
 									 至<input type="text" onClick="WdatePicker()" name="endtime" value="<?php echo $_GET['endtime']?>" class="form-control input-sm" placeholder="" aria-controls="example1" autocomplete="off">
 
 									 <div id="example1_filter" style="text-align:left;display:inline-block;margin-left:38px">
+										 筛选：<select id="khlx" name="khlx"><option disabled="disabled" selected>客户类型</option></select>
+										 <select id="gjzt" name="gjzt"><option disabled="disabled" selected>跟进状态</option></select>
+									 </div>
+
+									 <div id="example1_filter" style="text-align:left;display:inline-block;margin-left:38px">
 										 部门：<select id="branch" name="branch"><option disabled="disabled" selected>选择分部</option>
-										 <option value=11>宝安1部</option>
-										 <option value=10>宝安2部</option>
-										 <option value=19>现金1部</option>
-										 <option value=1>现金2部</option>
-										 <option value=6>现金3部</option>
-										 <option value=33>现金4部</option>
+										 <option value="1">丽湾分部</option>
+										 <option value="11">朗苑金融门店部</option>
+										 <option value="10">诚和金融门店部</option>
 									 </select>
 									 </div>
 
@@ -128,30 +130,33 @@
 								function tj(){
 								  $(".submit_form").submit();
 								} 
+								function tjs(){
+								  $(".submit_formss").submit();
+								}
+                                function lxtj(){
+                                    $(".submit_lx").submit();
+                                }
 						   </script>
                      <form action="/Admin/Uclient/del" method="post" class="submit_forms" >
                        <table id="" class="table table-bordered table-hover" style="margin-top:30px;">
                           	<thead>
-	                          <tr>
+	                           <tr>
 	                           	<th width="5%">ID</th>
 	                           	<th width="5%">姓名</th>
-								  	<!-- <th width="4%">姓别</th> -->
-								  	<th width="5%">类型</th>
-								  	<!--<th width="8%">联系时间</th>-->
-						   			<th width="6%">贷款金额</th>
-	                                <th width="5%">贷款期数</th>
-								  	<th width="6%">保证金比例</th>
-								  	<th width="5%">放款日期</th>
-								  	<th width="5%">到期日期</th>
-								  	<th width="5%">业务员</th>
-								  	<th width="5%">身份证</th>
-									<th width="6%">手续费</th>
-									<th width="3%">保证金</th>
-	                                <th width="6%">累计利息</th>
-	                                <th width="5%">应还利息</th>
-	                                <th width="5%">已还利息</th>
-	                                <th width="6%">滞纳金</th>
-							        <th width="6%">操作</th>
+										  	<!-- <th width="4%">姓别</th> -->
+										  	<th width="5%">类型</th>
+										  	<!--<th width="8%">联系时间</th>-->
+								   			<th width="8%">贷款金额</th>
+			                                <th width="8%">贷款期数</th>
+										  	<th width="6%">保证金比例</th>
+										  	<th width="5%">放款日期</th>
+										  	<th width="5%">到款日期</th>
+										  	<th width="8%">业务员</th>
+											<th width="6%">手续费</th>
+											<th width="3%">保证金</th>
+	                              <th width="6%">累计利息</th>
+	                              <th width="6%">滞纳金</th>
+							      <th width="6%">操作</th>
 	                           </tr>
                           	</thead>
 							<tbody style="text-align: center;">
@@ -164,41 +169,18 @@
 									<td>{$value.money}</td>
 									<td>{$value.num}</td>
 									<td>{$value.marginratio}</td>
-									<td><?php echo date("Y-m-d",$value['starttime']); ?></td>
-									<td><?php echo date("Y-m-d",$value['endtime']); ?></td>
+									<td>{$value.starttime}</td>
+									<td>{$value.endtime}</td>
 									<td>{$value.salesman}</td>
-									<td>{$value.cardid|substr=0,3}***{$value.cardid|substr=13,17}
 									<td>{$value.fee}</td>
 									<td>{$value.margin}</td>
 									<td>{$value.accumulative}</td>
-									<td><?php echo $value['whlx']?$value['whlx']:0 ?></td>
-									<td><?php echo $value['yhlx']?$value['yhlx']:0 ?></td>
 									<td>{$value.latefee}</td>
 									<td><a href="/Admin/Monetary/editsd/id/{$value.id}" class="btn btn-primary btn-sm"><i class="fa fa-edit" style="font-size:16px;"></i></a>
-									<if condition="in_array('14',$_SESSION['level'])">
-									     <a class="btn btn-danger btn-sm" href="javascript:if(confirm('确实要删除该内容吗?'))location='/Admin/Monetary/dels/id/{$value.id}'"><i class="fa fa-trash" style="font-size:16px;"></i></a>
-									</if>
+										<a class="btn btn-danger btn-sm" href="javascript:if(confirm('确实要删除该内容吗?'))location='/Admin/Monetary/dels/id/{$value.id}'"><i class="fa fa-trash" style="font-size:16px;"></i></a>
 									</td>
 								</tr>
 							</foreach>
-								<tr style="background:#D8BFD8">
-									<td><font color="red">统计</font></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td>{$twhlx}</td>
-									<td>{$tyhlx}</td>
-									<td></td>
-									<td></td>
-								</tr>
 							</tbody>
 						  
                         </table>
@@ -344,7 +326,45 @@
     <include file="common:js" />
    
     <script>
-        
+        $(function(){
+            $.post('/Admin/Uclient/addztlx',{},function(data){
+
+                for (var j = 1 ; j<17;j++){
+                    $("#gjzt").append("<option value='"+j+"'>"+data[0][j]+"</option>");
+                }
+                for (var i = 1 ; i <15;i++){
+                    $("#khlx").append("<option value='"+i+"'>"+data[1][i]+"</option>");
+                }
+            });
+
+            $.post('/Admin/Uclient/htmd',{b:1},function(data){
+                for(var s = 0;s<data.length;s++){
+                    $("#hengtong").append("<option>"+data[s]['username']+"</option>");
+                }
+                // $("#hengtong").append("<option value=''>ass</option>");
+            });
+
+        });
+        //排序
+        $("#sx").click(function(){
+            // $('#footpage').remove();
+            // $('html').load('indexpx.html');page
+            $.post('/Admin/Uclient/px',{qaz:'s'},function(data){
+
+                $("#cxbox").html(data);
+                window.location.href="/Uclient/px/p/1.html";
+            });
+        });
+
+//通话接口读取当前业务员信息
+        $(".cph").click(function(){
+            // phone=$(this).attr('name');
+            ids=$(this).closest('tr').children(":first").text();
+            id=$.trim(ids);
+            $.post("/Admin/Uclient/calls",{id:id},function(data){
+
+            })
+        });
 	//约见审核
 	function met(_this,id){
 	  $(".met_id").attr('value',id);

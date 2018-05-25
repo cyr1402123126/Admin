@@ -73,7 +73,7 @@
 						  <label class="radio-inline">
 							<input type="checkbox" name="level[]" <?php if(in_array('1104',$data['level'])){?>checked<?php }?> value="1104"> 财务部工作台
 						  </label>
-							<br/>
+						  
 						</div>
 					 </div>
 					<div class="form-group">
@@ -174,17 +174,15 @@
 						</div>
 					  </div>
 					  <div class="form-group">
-						<label class="col-md-2 control-label">冠成居间业务权限：</label>
+						<label class="col-md-2 control-label">未成交客户信息权限：</label>
 						<div class="col-md-9 bor_der">
 						 <label class="radio-inline">
-							<input type="checkbox" name="level[]" <?php if(in_array('10',$data['level'])){?>checked<?php }?> value="10"> 冠成居间业务栏目
+							<input type="checkbox" name="level[]" <?php if(in_array('10',$data['level'])){?>checked<?php }?> value="10"> 未成交客户信息
 						  </label>
 							<label class="radio-inline">
 								<input type="checkbox" name="level[]" <?php if(in_array('17',$data['level'])){?>checked<?php }?> value="17">  跟进状态
 							</label>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('18',$data['level'])){?>checked<?php }?> value="18">  批量分配
-							</label>
+
 							<br/>
 						  <label class="radio-inline">
 							<input type="checkbox" name="level[]" <?php if(in_array('11',$data['level'])){?>checked<?php }?> value="11">  未成交客户列表
@@ -204,13 +202,14 @@
 						   <label class="radio-inline">
 							<input type="checkbox" name="level[]" <?php if(in_array('16',$data['level'])){?>checked<?php }?> value="16"> 可审核
 						   </label>
-							<br/>
-							<div class=" bor_der">
-							</div>
-
-							<!--<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('20',$data['level'])){?>checked<?php }?> value="20">  已成交客户信息
-							</label>-->
+						</div>
+					  </div>
+					  <div class="form-group">
+						<label class="col-md-2 control-label">已成交客户信息权限：</label>
+						<div class="col-md-9 bor_der">
+						 <label class="radio-inline">
+							<input type="checkbox" name="level[]" <?php if(in_array('20',$data['level'])){?>checked<?php }?> value="20">  已成交客户信息
+						  </label>
 							<label class="radio-inline">
 								<input type="checkbox" name="level[]" <?php if(in_array('26',$data['level'])){?>checked<?php }?> value="26"> 操作是否回款
 							</label>
@@ -224,35 +223,38 @@
 								<input type="checkbox" name="level[]" <?php if(in_array('29',$data['level'])){?>checked<?php }?> value="29"> 修改状态
 							</label>
 							<br/>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('21',$data['level'])){?>checked<?php }?> value="21">  已成交客户列表
-							</label>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('22',$data['level'])){?>checked<?php }?> value="22"> 已成交编辑
-							</label>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('23',$data['level'])){?>checked<?php }?> value="23"> 已成交添加
-							</label>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('24',$data['level'])){?>checked<?php }?> value="24"> 已成交删除
-							</label>
+						  <label class="radio-inline">
+							<input type="checkbox" name="level[]" <?php if(in_array('21',$data['level'])){?>checked<?php }?> value="21">  已成交客户列表
+						  </label>
+						   <label class="radio-inline">
+							<input type="checkbox" name="level[]" <?php if(in_array('22',$data['level'])){?>checked<?php }?> value="22"> 已成交编辑
+						   </label>
+						   <label class="radio-inline">
+							<input type="checkbox" name="level[]" <?php if(in_array('23',$data['level'])){?>checked<?php }?> value="23"> 已成交添加
+						   </label>
+						   <label class="radio-inline">
+							<input type="checkbox" name="level[]" <?php if(in_array('24',$data['level'])){?>checked<?php }?> value="24"> 已成交删除
+						   </label>
 							<br/>
-							<!-- <label class="radio-inline">
-                             <input type="checkbox" name="level[]" <?php if(in_array('25',$data['level'])){?>checked<?php }?> value="25"> 可查看电话号
-                            </label> -->
+						   <!-- <label class="radio-inline">
+							<input type="checkbox" name="level[]" <?php if(in_array('25',$data['level'])){?>checked<?php }?> value="25"> 可查看电话号
+						   </label> -->
 							<label class="radio-inline">
 								<input type="checkbox" name="level[]" <?php if(in_array('201',$data['level'])){?>checked<?php }?> value="201"> 修改渠道人员
 							</label>
 							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('202',$data['level'])){?>checked<?php }?> value="202">提交操作
+							<input type="checkbox" name="level[]" <?php if(in_array('202',$data['level'])){?>checked<?php }?> value="202">提交操作
 							</label>
-							<br/>
-							<div class=" bor_der">
-							</div>
 
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('30',$data['level'])){?>checked<?php }?> value="30"> 公海客户管理
-							</label>
+
+						</div>
+					  </div>
+					  <div class="form-group">
+						<label class="col-md-2 control-label">公海客户管理权限：</label>
+						<div class="col-md-9 bor_der">
+						 <label class="radio-inline">
+							<input type="checkbox" name="level[]" <?php if(in_array('30',$data['level'])){?>checked<?php }?> value="30"> 公海客户管理
+						  </label>
 							<label class="radio-inline">
 								<input type="checkbox" name="level[]" <?php if(in_array('31',$data['level'])){?>checked<?php }?> value="31"> 公海客户列表
 							</label>
@@ -262,28 +264,26 @@
 							</label>
 							<br/>
 
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('32',$data['level'])){?>checked<?php }?> value="32"> 提取公海按钮
-							</label>
+						   <label class="radio-inline">
+							<input type="checkbox" name="level[]" <?php if(in_array('32',$data['level'])){?>checked<?php }?> value="32"> 提取公海按钮
+						   </label>
 							<label class="radio-inline">
 								<input type="checkbox" name="level[]" <?php if(in_array('37',$data['level'])){?>checked<?php }?> value="37"> 公海客户分配
 							</label>
 							<label class="radio-inline">
 								<input type="checkbox" name="level[]" <?php if(in_array('38',$data['level'])){?>checked<?php }?> value="38"> 批量分配公海
 							</label>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('34',$data['level'])){?>checked<?php }?> value="34"> 公海客户删除
-							</label>
-							<!-- <label class="radio-inline">
-                             <input type="checkbox" name="level[]" <?php if(in_array('35',$data['level'])){?>checked<?php }?> value="35"> 可查看电话号
-                            </label> -->
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('36',$data['level'])){?>checked<?php }?> value="36"> 可审核
-							</label>
+						   <label class="radio-inline">
+							<input type="checkbox" name="level[]" <?php if(in_array('34',$data['level'])){?>checked<?php }?> value="34"> 公海客户删除
+						   </label>
+						   <!-- <label class="radio-inline">
+							<input type="checkbox" name="level[]" <?php if(in_array('35',$data['level'])){?>checked<?php }?> value="35"> 可查看电话号
+						   </label> -->
+						   <label class="radio-inline">
+							<input type="checkbox" name="level[]" <?php if(in_array('36',$data['level'])){?>checked<?php }?> value="36"> 可审核
+						   </label>
 						</div>
 					  </div>
-
-
 					  <div class="form-group">
 						<label class="col-md-2 control-label">内部人员管理权限：</label>
 						<div class="col-md-9 bor_der">
@@ -350,50 +350,6 @@
 								<input type="checkbox" name="level[]" <?php if(in_array('71',$data['level'])){?>checked<?php }?> value="71"> 录音列表
 							</label><br/>
 
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-2 control-label">冠成自有现金业务权限：</label>
-						<div class="col-md-9 bor_der">
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('81',$data['level'])){?>checked<?php }?> value="81"> 冠成信用贷栏目
-							</label>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('82',$data['level'])){?>checked<?php }?> value="82"> 速分贷列表
-							</label>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('83',$data['level'])){?>checked<?php }?> value="83"> 速分贷添加
-							</label>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('84',$data['level'])){?>checked<?php }?> value="84"> 速贷列表
-							</label>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('85',$data['level'])){?>checked<?php }?> value="85"> 速贷添加
-							</label><br/>
-							<label class="radio-inline">
-							<input type="checkbox" name="level[]" <?php if(in_array('86',$data['level'])){?>checked<?php }?> value="86"> 现金客户列表
-						</label>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('87',$data['level'])){?>checked<?php }?> value="87"> 还款操作
-							</label>
-                            <label class="radio-inline">
-                                <input type="checkbox" name="level[]" <?php if(in_array('88',$data['level'])){?>checked<?php }?> value="88"> 删除
-                            </label>
-                            <label class="radio-inline">
-                                <input type="checkbox" name="level[]" <?php if(in_array('89',$data['level'])){?>checked<?php }?> value="89"> 修改
-                            </label>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('801',$data['level'])){?>checked<?php }?> value="801"> 结清操作
-							</label><br/>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('90',$data['level'])){?>checked<?php }?> value="90"> 结清列表
-							</label>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('802',$data['level'])){?>checked<?php }?> value="802"> 放款审核
-							</label>
-							<label class="radio-inline">
-								<input type="checkbox" name="level[]" <?php if(in_array('803',$data['level'])){?>checked<?php }?> value="803"> 结清审核
-							</label><br/>
 						</div>
 					</div>
                     <div class="form-group">

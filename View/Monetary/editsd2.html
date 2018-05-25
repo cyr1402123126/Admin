@@ -58,8 +58,6 @@
     button, input, select, textarea {height: 30px;}
 
     #example1_wrapper .row .col-sm-6:nth-child(2){float: none;opacity: 0}
-    .txt{float:left;border:1px solid #ccc;width: calc(100% - 85px);margin-left: 15px;display: inline-block;vertical-align: middle;border-radius: 5px;font-size: 14px;padding: 10px;}
-    .msg{margin-top:10px;margin-bottom:20px;overflow:hidden;}
 </style>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -77,7 +75,6 @@
                     <div class="box">
                         <div class="box-header">
                             <h3 class="box-title"><a href="/Admin/Monetary/indexsd">速贷客户列表</a></h3>
-                             <div style="display:inline;float:right"></div>
                         </div>
                         <div class="box-body">
                             <ul class="nav nav-tabs">
@@ -86,9 +83,48 @@
                             <div id="myTabContent" class="tab-content">
                                 <div class="tab-pane fade active in" id="home">
                                     <div class="box-body">
-                                       <span>姓名：{$name}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>身份证：{$cardid}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>贷款编号：{$dkbh}</span>
+                                        <form action="/Admin/Uclient/index" method="GET" class="submit_form">
+                                            <div id="example1_filter" class="dataTables_filter" style="text-align:left;display:inline-block;">
+                                                <label id="sjss">
+                                                    日期<input type="text" onClick="WdatePicker()" name="stime" value="<?php echo $_GET['stime']?>" class="form-control input-sm" placeholder="" aria-controls="example1" autocomplete="off">
+                                                    至<input type="text" onClick="WdatePicker()" name="endtime" value="<?php echo $_GET['endtime']?>" class="form-control input-sm" placeholder="" aria-controls="example1" autocomplete="off">
+
+                                                    <div id="example1_filter" style="text-align:left;display:inline-block;margin-left:38px">
+                                                        筛选：<select id="khlx" name="khlx"><option disabled="disabled" selected>客户类型</option></select>
+                                                        <select id="gjzt" name="gjzt"><option disabled="disabled" selected>跟进状态</option></select>
+                                                    </div>
+
+                                                    <div id="example1_filter" style="text-align:left;display:inline-block;margin-left:38px">
+                                                        部门：<select id="branch" name="branch"><option disabled="disabled" selected>选择分部</option>
+                                                        <option value="1">丽湾分部</option>
+                                                        <option value="11">朗苑金融门店部</option>
+                                                        <option value="10">诚和金融门店部</option>
+                                                    </select>
+                                                    </div>
+
+                                                    <div id="example1_filter" class="dataTables_filter" style="text-align:left;display:inline-block;margin-left:38px">
+                                                        <label>
+                                                            总搜索：<input type="text" name="sou" value="<?php echo $_GET['sou']?>" class="form-control input-sm" placeholder="姓名/手机/业务员" aria-controls="example1" autocomplete="off">
+                                                        </label>
+                                                    </div>
+
+                                                    <a href="javascript:void(0)" onclick="tj()" id="zj" class="so">确定</a>
+                                                </label>
+                                            </div>
+                                        </form>
                                     </div>
 
+                                    <script>
+                                        function tj(){
+                                            $(".submit_form").submit();
+                                        }
+                                        function tjs(){
+                                            $(".submit_formss").submit();
+                                        }
+                                        function lxtj(){
+                                            $(".submit_lx").submit();
+                                        }
+                                    </script>
             <table class="table table-bordered table-hover" style="margin-top: 30px;">
                 <thead>
                 <tr>
@@ -96,17 +132,14 @@
                     <th width="5%">期数</th>
                     <th width="8%">本金余额</th>
                     <th width="8%">月利率</th>
-                    <th width="6%">计息起日</th>
-                    <th width="6%">计息止日</th>
+                    <th width="6%">计息日</th>
+                    <th width="6%">还本日</th>
                     <th width="6%">当期应付本金</th>
                     <th width="8%">当期应付利息</th>
                     <th width="5%">已归还本金</th>
                     <th width="5%">已归还利息</th>
                     <th width="6%">当月应还</th>
-                    <th width="4%">还款状态</th>
-                    <th width="6%">逾期天数</th>
                     <th width="6%">滞纳金</th>
-                    <th width="6%">未还滞纳金</th>
                     <!-- <th width="6%">操作</th> -->
                 </tr>
                 </thead>
@@ -125,9 +158,6 @@
                             <td>{$value.returnpri}</td>
                             <td>{$value.returninterest}</td>
                             <td>{$value.arrears}</td>
-                            <td><?php echo $value['repayment']==1?'未还完':'已还完' ?></td>
-                            <td>{$value.yqday}</td>
-                            <td>{$value.yqmoney}</td>
                         <if condition="$i eq 1">
                          <td rowspan="<?php echo count($details) ?>"><span>{$znj}</span></td>
                          </if>
@@ -136,34 +166,14 @@
                         </td> -->
                     </tr>
             </volist> 
-                    <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>{$zyqd}</td>
-                            <td>{$zyqm}</td>
-                            <td></td>
-                    </tr>
             </tbody>
 
             </table>
-         <if condition="in_array('87',$_SESSION['level'])">   
-            <div style="padding-left:500px;"><input type="number" name="lastsum" class="hkje" placeholder="填写还款金额">
-            <button class="updateone btn btn-primary btn-flat"  name="{$ids}">还款</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="updatejq btn btn-primary btn-flat" name="{$ids}">结清</button>
-            </div>
-        </if>
+            
+        <div><input type="number" name="lastsum" class="hkje" placeholder="填写还款金额">
+        <button class="updateone btn btn-primary btn-flat"  name="{$ids}">还款</button></div>
 
-        <div class="hkxq" style="width:50%;float:right">
+        <div class="hkxq">
              <table class="table table-bordered table-hover" style="margin-top: 30px;">
                 <thead>
                 <tr>
@@ -185,25 +195,6 @@
             </tbody>
 
             </table>
-        </div>
-        <div class="gjjl" style="width:48%;float:right;margin-right:20px;margin-top:30px;border:1px solid #ccc">
-            <textarea class="sac" style="margin:5px;height:auto; width:calc(100% - 20px);" rows="3" name="use" placeholder="请输入客户跟进记录，不超过300字..."></textarea>
-            <input type="hidden" name="ids" class="idsss" value="{$ids}">
-            <a style="margin-top:10px;width:200px;margin-left:calc(100% - 215px);" class="btn btn-block btn-primary btn-flat" onclick="liyt(this)" value="确定添加" autocomplete="off">确定添加</a>
-            <div id="message" style="padding:5px;overflow:hidden">
-                <foreach name="records" item="val">
-                    <div class="msg">
-                        <div class="act" style="float:left"><img width="60px" height="60px" src="/Public/admin/images/active-man.png"></div>
-                        <div class="txt">
-                          <i class="msg_input"></i>
-                          <span class="name" style="color:#00A0EA">{$val.admin_name}:</span>
-                          <p>{$val.content}</p>
-                          <div class="date">{$val.addtime|date="Y-m-d H:i",###}</div>
-                        </div>
-                    </div>
-                </foreach>
-            </div>
-            <div class="page" style="text-align:center;">{$show}</div>
         </div>
                         
                     </div>
@@ -283,38 +274,11 @@
        var id = $(this).attr('name');
 
        $.post("/Admin/Monetary/updsd",{id:id,hkje:hkje},function(data){
+            
             alert(data);
             window.location.reload();
        }); 
     })
-
-     $('.updatejq').click(function(){
-       
-       var id = $(this).attr('name');
-
-       $.post("/Admin/Monetary/updstate",{id:id},function(data){
-             if(data==1){
-                alert("贷款已结清");
-                window.location.href="/Admin/Monetary/settle";
-            }else{
-                alert("贷款未结清");
-                window.location.href="/Admin/Monetary/settle";
-            }
-       }); 
-    })
-
-     function liyt(){
-       var id = $(".idsss").val();
-       var content = $(".sac").val();
-       $.get('/Admin/Monetary/record',{id:id,content:content},function(data){
-            if(data==2){
-                alert("录入失败");
-            }else{
-                alert("录入成功");
-                window.location.reload();                
-            }
-       });
-     }
 </script>
 </body>
 </html>

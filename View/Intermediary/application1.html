@@ -277,7 +277,7 @@
             </div>
             <div class="two">
                 <!-- <img id="imgss" width="450" height="528" src="http://47.92.119.237{$data['photo']}"/> http://47.92.119.237-->
-                <img id="imgss0"  src="http://47.92.119.237{$data['photo']}"/>
+                <img id="imgss0"  src="http://www.crm.com{$data['photo']}"/>
             </div>
             <!--<script typet="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>-->
         </div>
@@ -319,7 +319,14 @@
                 <label for="input18">发薪日/发薪方式</label>
                 <input type="text" name="payday" value="{$data['payday']}" placeholder="选填" id="input18" class="input">
             </div>
-            
+            <div class="grounp">
+                <label for="get">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>类型</label>
+                <select name="type" required id="get" class="type bumen sea select">
+                    <option value="0">请选择</option>
+                    <option value="1" <?php if($data['type']==1) echo selected ?> >信用贷</option>
+                    <option value="2" <?php if($data['type']==2) echo selected ?> >抵押贷</option>
+                </select>
+            </div>
         </div>
         <h2 class="h2-wife">配偶信息</h2>
         <div class="border border-wife" style="height: 138px;">
@@ -417,29 +424,13 @@
                 </select>
             </div>
         </div>
-        <h2>产品确认</h2>        
+        <h2>产品确认</h2>
         <div class="border">
             <div class="grounp">
-                <label for="get">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>类型</label>
-                <select name="type" required id="get" class="type bumen sea select">
-                    <option value="0">请选择</option>
-                    <option value="1" <?php if($data['type']==1) echo selected ?> >信用贷</option>
-                    <option value="2" <?php if($data['type']==2) echo selected ?> >抵押贷</option>
-                </select>
-            </div>
-            <div class="grounp">
-                <label for="input51">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;产品</label>
+                <label for="input51">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型</label>
                 <select name="types" id="types" style="width: 250px;" class="bumen sea select"  >
                     <option value="0">请选择</option>
                 </select>
-            </div>
-        </div>
-        <h2>录入</h2>
-        <div class="border">
-            <div class="grounp">
-                <label for="input51">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录入人员</label><input type="text" style="color: #747474;font-size: 22px;" id="input45" class="input" name="entry_personnel" readonly
-                 value="<?php if ($data['entry_personnel']){echo  $data['entry_personnel'];}else{echo $_SESSION['aname'];} ?>" >
-                <!-- <input type="number" name="friendtel" value="{$data['friendtel']}" placeholder="必填" id="input33" class="input" required> -->
             </div>
         </div>
         <input type="hidden" name="id" value="{$data['id']}">
@@ -566,10 +557,10 @@
     $(".type").change(function(){
         if($(this).val()==1){
             $("#types").empty();
-            $("#types").append("<option value='1'>房供贷</option><option value='2'>保单贷</option><option value='3'>小额贷</option><option value='4'>网贷</option><option value='5'>工薪贷</option><option value='6'>车贷</option>");
+            $("#types").append("<option value='1'>月供</option><option value='2'>保单</option><option value='3'>小额</option><option value='4'>微粒贷</option>");
         }else if($(this).val()==2){
             $("#types").empty();
-            $("#types").append("<option value='16'>消费贷</option><option value='17'>经营贷</option>");
+            $("#types").append("<option value='5'>消费贷</option><option value='6'>经营贷</option>");
         }
     });
 
@@ -581,10 +572,10 @@
         //修改信息选中类型
         if($(".type").val()==1){
             $("#types").empty();
-            $("#types").append("<option value='1' <?php if($data['types']==1) echo selected ?>>房供贷</option><option value='2' <?php if($data['types']==2) echo selected ?>>保单贷</option><option value='3' <?php if($data['types']==3) echo selected ?>>小额贷</option><option value='4' <?php if($data['types']==4) echo selected ?>>网贷</option><option value='5' <?php if($data['types']==5) echo selected ?>>工薪贷</option><option value='6' <?php if($data['types']==6) echo selected ?>>车贷</option>");
+            $("#types").append("<option value='1' <?php if($data['types']==1) echo selected ?>>月供</option><option value='2' <?php if($data['types']==2) echo selected ?>>保单</option><option value='3' <?php if($data['types']==3) echo selected ?>>小额</option><option value='4' <?php if($data['types']==4) echo selected ?>>微粒贷</option>");
         }else if($(".type").val()==2){
             $("#types").empty();
-            $("#types").append("<option value='16' <?php if($data['types']==16) echo selected ?>>消费贷</option><option value='17' <?php if($data['types']==17) echo selected ?>>经营贷</option>");
+            $("#types").append("<option value='5' <?php if($data['types']==5) echo selected ?>>消费贷</option><option value='6' <?php if($data['types']==6) echo selected ?>>经营贷</option>");
         }        
     });
 </script>

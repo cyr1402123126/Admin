@@ -5,7 +5,6 @@
     <meta name="viewport" content="maximum-scale=0.751,minimum-scale=0.751,user-scalable=1,width=device-width,initial-scale=0.751" />
     <title>Title</title>
     <script src="js/jquery.min.js"></script>
-    <script src="__PUBLIC__/admin/js/branch.js"></script>
     
 </head>
 <style>
@@ -115,7 +114,7 @@
         line-height: 42px;
         margin-left: 30px;
         position: relative;
-        bottom: 6px;
+        bottom: 3px;
         border: none;
         outline: none;
         font-size: 21px;
@@ -171,6 +170,7 @@
     }
     .border_specialy .grounp {
         float: none!important;
+
     }
     .grounp_specialy {
         position: relative;
@@ -185,36 +185,16 @@
         position: absolute;
         right: 0;
         top: 0;
-        width: 497px;
+        width: 450px;
         height: 528px;
         border: 1px solid #cecece;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
     }
-    ::-webkit-input-placeholder { /* WebKit browsers */ 
-    color: #dadada; 
-    } 
-    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
-    color: #dadada#dadada#dadada; 
-    } 
-    ::-moz-placeholder { /* Mozilla Firefox 19+ */ 
-    color: #dadada#dadada; 
-    } 
-    :-ms-input-placeholder { /* Internet Explorer 10+ */ 
-    color: #dadada; 
-    } 
-    /*.two img {*/
-        /*!*width: 100%;*!*/
-        /*height: 100%;*/
-    /*}*/
 </style>
 <body>
 <div class="img">
     <div class="top">
         <div class="left">
-            <a href="http://47.92.119.237/Admin/Monetary/ipadSystem"><img src="http://47.92.119.237:8888/img/back.png" alt="">返回</a>
+            <a href="http://47.92.119.237:8888/Signing/"><img src="http://47.92.119.237:8888/img/back.png" alt="">返回</a>
         </div>
         <span class="guan">现金业务申请表</span>
     </div>
@@ -223,7 +203,7 @@
         <div class="border border_specialy" style="height: 553px;">
             <div class="grounp">
                 <label for="input1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>申请人姓名</label>
-                <input name="name" type="text" placeholder="必填" id="input1" class="input" required>
+                <input name="username" type="text" placeholder="必填" id="input1" class="input" required>
             </div>
             <div class="grounp">
                 <label for="input40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>性别</label>
@@ -233,30 +213,32 @@
                     <option value="1">女</option>
                 </select>
             </div>
+            <!-- <div class="grounp">
+                 <label for="input40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别</label>
+                 <input type="text" placeholder="请输入" id="input40" class="input">
+             </div>-->
             <div class="grounp">
                 <label for="input2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>手机号码</label>
                 <input type="number" name="phone" placeholder="必填" id="input2" class="input" required>
             </div>
-            <span id="lyhs" style="color:red;font-size:16px;display:none;">该机主为老用户</span>
             <div class="grounp">
                 <label for="input3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>身份证号码</label>
-                <input type="text" name="cardid" placeholder="必填" id="input3" class="input" required>
+                <input type="number" name="cardId" placeholder="必填" id="input3" class="input" required>
             </div>
             <div class="grounp">
                 <label for="input4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>申请金额</label>
-                <input type="number" name="money" placeholder="必填" id="input4" class="input" required style="width:160px;">&nbsp;&nbsp;<span style="font-size: 22px;color: #747474;">万元</span>
+                <input type="number" name="loan" placeholder="必填" id="input4" class="input" required>
             </div>
             <div class="grounp">
                 <label for="input5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;借款用途</label>
                 <input type="text" name="use" placeholder="选填" id="input5" class="input">
             </div>
             <div class="grounp">
-                <label for="get">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>婚姻状态</label>
-                <select required name="maritalstatus" id="get" class="select">
-                    <option value="">请选择</option>
+                <label for="get">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;婚姻状态</label>
+                <select name="maritalstatus" id="get" class="select">
+                    <option value="0">请选择</option>
                     <option value="1">已婚</option>
                     <option value="2">未婚</option>
-                    <option value="3">离异</option>
                 </select>
             </div>
             <div class="grounp">
@@ -265,7 +247,7 @@
             </div>
             <div class="grounp grounp_specialy">
                 <div class="input divs" style="width: 455px;overflow: hidden;">
-                    <label for="room" style="bottom: -5px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<span class="span">*</span>照片
+                    <label for="room" style="bottom: -5px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;照片
                         <input class="inputs" id="room" name="photo"
                                onchange="showPicture(this)" type="file" required/>
                     </label>
@@ -314,15 +296,15 @@
                 <input type="text" name="payday" placeholder="选填" id="input18" class="input">
             </div>
         </div>
-        <h2 class="h2-wife">配偶信息</h2>
-        <div class="border border-wife" style="height: 138px;">
+        <h2>配偶信息</h2>
+        <div class="border" style="height: 138px;">
             <div class="grounp">
-                <label for="input19">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span span-wife">*</span>配偶姓名</label>
-                <input type="text" name="peioname" placeholder="必填" id="input19" class="input">
+                <label for="input19">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>配偶姓名</label>
+                <input type="text" name="peioname" placeholder="必填" id="input19" class="input" required>
             </div>
             <div class="grounp">
-                <label for="input20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span span-wife">*</span>手机号码</label>
-                <input type="number" name="peiotel" placeholder="必填" id="input20" class="input" >
+                <label for="input20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>手机号码</label>
+                <input type="number" name="peiotel" placeholder="必填" id="input20" class="input" required>
             </div>
             <div class="grounp">
                 <label for="input21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单位名称</label>
@@ -345,7 +327,7 @@
             </div>
             <div class="grounp">
                 <label for="input25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>亲属关系</label>
-                <input type="text" name="arelatives" placeholder="必填" id="input25" class="input" required>
+                <input type="text" name="relatives" placeholder="必填" id="input25" class="input" required>
             </div>
             <div class="grounp choose">
                 <label for="input42">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;住宅地址</label>
@@ -363,16 +345,16 @@
                 <input type="number" name="colleaguetel" placeholder="必填" id="input28" class="input" required>
             </div>
             <div class="grounp">
-                <label for="input29">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单位电话</label>
-                <input type="number" name="colleaguedwtel"  placeholder="选填" id="input29" class="input">
+                <label for="input29">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>单位电话</label>
+                <input type="number" name="colleaguedwtel"  placeholder="必填" id="input29" class="input" required>
             </div>
             <div class="grounp">
                 <label for="input30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;部门</label>
                 <input type="text" name="colleaguebm" placeholder="选填" id="input30" class="input">
             </div>
             <div class="grounp">
-                <label for="input31">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;职务</label>
-                <input type="text" name="colleaguezw" placeholder="选填" id="input31" class="input">
+                <label for="input31">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>职务</label>
+                <input type="text" name="colleaguezw" placeholder="必填" id="input31" class="input" required>
             </div>
         </div>
         <h2>朋友信息</h2>
@@ -386,54 +368,62 @@
                 <input type="number" name="friendtel"  placeholder="必填" id="input33" class="input" required>
             </div>
         </div>
-        <h2>客户情况描述</h2>
-        <div class="border" style="height: 77px;    margin-bottom: 50px;">
-           <textarea cols="147" style="    color: #747474;font-size: 22px;padding: 10px 0 0 10px;height: 100px;width: 100%;" name="description" rows="4" placeholder="1、房产余额及贷款空间&nbsp;&nbsp;2、民间负债情况&nbsp;&nbsp;3、收入来源" style="padding: 5px;" required></textarea>
-        </div>
         <h2>业务员信息</h2>
         <div class="border">
             <div class="grounp">
                 <label for="input41">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;部门</label>
-                <select name="branch" id="branch" style="width: 250px;" class="bumen sea select" onchange="fp(this.value)" required>
-                </select>
+                <select name="admin_ids" id="input41" style="width: 250px;" class="bumen sea select" onchange="fp(this.value)" required>
+                                    <option value='' disabled selected>请选择</option>
+                                    <!-- <option value=7>丽湾分部总监</option>
+                                    <option value=8>丽湾分部</option>
+                                    <option value=16>朗苑金融门店部总监</option>
+                                    <option value=17>朗苑金融门店部</option>
+                                    <option value=18>诚和金融门店部总监</option>
+                                    <option value=19>诚和金融门店部</option>
+                                    <option value=30>现金部经理</option>
+                                    <option value=29>现金部</option> -->
+                                  <option value=16>宝安1部总监</option>
+                                  <option value=17>宝安1部</option>
+                                  <option value=18>宝安2部总监</option>
+                                  <option value=19>宝安2部</option>
+                                  <option value=30>现金1部总监</option>
+                                  <option value=29>现金1部</option>
+                                  <option value=7>现金2部总监</option>
+                                  <option value=8>现金2部</option>
+                                  <option value=25>现金3部总监</option>
+                                  <option value=9>现金3部</option>
+                                  <option value=33>现金4部</option>
+
+                 </select>
             </div>
             <div class="grounp">
                 <label for="input43">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>业务员</label>
-                <select id="ywy" class="members sea select" name="salesman" required>
+                <select  class="members sea select" name="admin_id" required>
                                     <option value=''>请选择</option>
                                 </select>
             </div>
         </div>
-        <h2>录入人员</h2>
-        <div class="border">
-           <input type="text" style="color: #747474;font-size: 22px;padding: 10px 0 10px 10px;width: 100%;" name="entry_personnel" readonly value="{$_SESSION['aname']}">
-        </div>
         <input type="submit" id="tjbtn" value="提交" class="button">
     </form>
 </div>
-<div id="bfc" style='width:100%;height:2300px;background:#ccc;font-size:28px;line-height:2300px;position:absolute;top:0;left:0;opacity: 0.3;display:none'><center>数据正在保存请等待...</cneter></div>
 <include file="common:js" />
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
 <script>
-
     var flag=true;
     $('#get').change(function (e) {
                 if ($('#get').find('option:selected').val()==2 && flag) {
                     $('.height').animate({
                         'height':'260px'
                     },500);
-                   $('.h2-wife,.border-wife').hide();
-                   $('.choose').after('<br><div class="grounp a"> <label for="name">&nbsp;&nbsp;<span class="span">*</span>其他亲属姓名</label>'+
-                '<input type="text" placeholder="必填" name="qtrelativesname" class="input"></div> <div class="grounp b">'+
-                '<label for="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>电话</label>'+
-                '<input type="number" placeholder="必填" name="qtrelativestel" class="input"> </div> <div class="grounp c">'+
-                '<label for="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>单位</label>'+
-                '<input type="text" placeholder="必填" name="qtrelativesdw" class="input"> </div> <div class="grounp d">'+
-                '<label for="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;住宅地址</label>'+
-                '<input type="text" placeholder="选填" name="qtrelativesadrs" class="input"></div>');
+                    $('.choose').after('<br><div class="grounp a"> <label for="name">&nbsp;&nbsp;<span class="span">*</span>其他亲属姓名</label>'+
+                        '<input type="text" placeholder="必填" id="name" class="input"></div> <div class="grounp b">'+
+                        '<label for="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>电话</label>'+
+                        '<input type="number" placeholder="必填" id="name" class="input"> </div> <div class="grounp c">'+
+                        '<label for="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>单位</label>'+
+                        '<input type="text" placeholder="必填" id="name" class="input"> </div> <div class="grounp d">'+
+                        '<label for="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;住宅地址</label>'+
+                        '<input type="text" placeholder="选填" id="name" class="input"></div>');
                     flag=false;
         }else if ($('#get').find('option:selected').val()!=2) {
-                    $('.h2-wife,.border-wife').show();
             $('.height').animate({
                 'height':'123px'
             },500,function () {
@@ -442,20 +432,28 @@
                     'paddingBottom':'16px'
                 })
             });
+//            $('.a,.b,.c,.d').remove();
             flag=true;
         }
     });
 
-    //加载部门
-    window.onload=(function(){
-        var b_val=$("#branch_val").val();
-         branchs(b_val); 
-    });
-
+    /*$('.choose').change(function () {
+        var val=$('#get').find('option:selected').val();
+        if (val==2) {
+            alert(2)
+        }
+    })*/
     //分配客户
     function fp(rid){
+        // $.post("/Admin/Apply/memberss",{rid,rid},function(data){
+        //     $(".members").empty();
+        //     for(i=0;i<data.length;i++){
+        //         $(".members").append("<option value="+data[i]['id']+">"+data[i]['username']+"</option>");
+        //     }
+        // })
         if(rid=='33'){
-            gyd();
+            $(".members").empty();
+            $(".members").append("<option value='65'>陈浩</option><option value='66'>宋远翔</option><option value='127'>刘创</option><option value='128'>纪雪铭</option><option value='136'>王俪瑄</option><option value='118'>何思敏</option><option value='147'>郭丽萍</option><option value='172'>冠成金服</option>");
         }else{
            $.post("/Admin/Apply/memberss",{rid,rid},function(data){
             $(".members").empty();
@@ -476,32 +474,20 @@
         if(flags){
             flags=false;
             $("#tjbtn").hide();
-            $("#bfc").css('display','block');
             return true;
         }else{
             alert("不要重复提交");
             return false;
         }
     }
-    
     function showPicture(img) {
         var objUrl = getObjectURL(img.files[0]);
-        var $img=$("#imgss");
+        console.log(getObjectURL(img.files[0]))
         if (objUrl) {
-            $img.attr("src", objUrl).load(function () {
-                var b=this.width/this.height;
-                var a=$('.two').width()/$('.two').height();
-                if (a>b) {
-                    $img.css('height','95%').css('width','auto');
-                }else {
-                    $img.css('height','auto').css('width','95%');
-                }
-            });
-            $('.two').css('background','#ededed')
-
+            $("#imgss").attr("src", objUrl);
+            $("#imgss").width(450).height(528);
         }
     }
-
     function getObjectURL(file) {
         var url = null;
         if (window.createObjectURL != undefined) { // basic
@@ -515,19 +501,8 @@
         return url;
     }
 
-    // $("#tjbtn").click(function(){
-    //     $("#bfc").css('display','block');
-    // });
-
-    $("#input2").blur(function(){
-        var phone=$(this).val();
-        $.get('/Admin/Apply/selectphone',{phone:phone},function(data){
-            if(data==1){
-                $("#lyhs").show();
-            }else{
-                $("#lyhs").hide();
-            }
-        });
+    $("#tjbtn").click(function(){
+        // alert("11")
     });
 
 </script>

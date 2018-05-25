@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5e47232b-3496-4266-92b2-bbf07e721777" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/View/Admin/addindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Admin/addindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Admin/addrank.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Admin/addrank.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Admin/addrank10.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Admin/addrank10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Admin/addrank11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Admin/sqrank1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Admin/sqrank1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Apply/administrate.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/administrate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Apply/index1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/index1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Apply/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Apply/investigate1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/investigate1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Apply/settlement.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/settlement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Apply/sign1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/sign1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Apply/yewuone1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/yewuone1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Apply/yewuones1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/yewuones1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Apply/yewuthree1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/yewuthree1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Apply/yewuthrees1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/yewuthrees1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Apply/yewutwo.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/yewutwo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Apply/yewutwo1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/yewutwo1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Base/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Base/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Base/index8.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Base/index8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/CarLoan/apply1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/apply1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/CarLoan/carfive.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/carfive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/CarLoan/carfour.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/carfour.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/CarLoan/carone.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/carone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/CarLoan/carsix.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/carsix.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/CarLoan/carthree.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/carthree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/CarLoan/cartwo.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/cartwo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/CarLoan/settlement.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/settlement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/CarLoan/yewuall.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/yewuall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Finance/add1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Finance/add1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Finance/branch.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Finance/branch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Finance/branch1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Finance/branch1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Finance/branch2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Finance/branch2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Finance/index1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Finance/index1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditFive_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditFive_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditFive_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditFive_m1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditFour_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditFour_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditFour_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditFour_m1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditSix_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditSix_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditThree_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditThree_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditThree_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditThree_m1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditTwo_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditTwo_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortEight_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortEight_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortEight_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortEight_m1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortEleven_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortEleven_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortFive_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortFive_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortFive_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortFive_m1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortFour_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortFour_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortFour_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortFour_m1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortNine_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortNine_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortNine_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortNine_m1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortSeven_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortSeven_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortSeven_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortSeven_m1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortSix_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortSix_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortTen_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortTen_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortTen_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortTen_m1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortThree_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortThree_m1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortTwo_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortTwo_m.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Intermediary/application1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/application1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Login/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/addindex2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/addindex2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/addindex3.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/addindex3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/addindex4.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/addindex4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/addindexsd1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/addindexsd1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/addindexsd2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/addindexsd2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/addindexsd3.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/addindexsd3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/edit1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/edit1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/edit2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/edit2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/edit3.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/edit3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/editsd2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/editsd2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/editsd3.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/editsd3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/index1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/index1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/index3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/index4.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/index4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/index5.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/index5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/indexsd1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/indexsd1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/indexsd2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/indexsd2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/indexsd3.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/indexsd3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/indexsd4.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/indexsd4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/infos0.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/infos0.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/infos1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/infos1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/infos2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/infos2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/infoss.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/infoss.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/listCustomers.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/listCustomers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/modify1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/modify1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/modifysd1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/modifysd1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/settle1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/settle1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Monetary/yewu.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/yewu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/common/side.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/common/side.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/common/side5.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/common/side5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/common/side6.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/common/side6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/common/side7.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/common/side7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="addindex.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/View/Admin/addindex.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>168</find>
+      <find>150</find>
+      <find>50</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\wamp64\www\Application\Admin\View\Admin</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/View/yewualls.html" />
+        <option value="$PROJECT_DIR$/View/Intermediary/MortEleven_m.html" />
+        <option value="$PROJECT_DIR$/View/Admin/addindex.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1100" />
+    <option name="height" value="1105" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="Conf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="D:/1" />
+    <property name="node.js.detected.package.prettier" value="true" />
+    <property name="node.js.path.for.package.prettier" value="project" />
+    <property name="node.js.selected.package.prettier" value="" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e47232b-3496-4266-92b2-bbf07e721777" name="Default" comment="" />
+      <created>1527214503976</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1527214503976</updated>
+      <workItem from="1527214505369" duration="2264000" />
+      <workItem from="1527216795377" duration="61000" />
+      <workItem from="1527216868074" duration="9000" />
+      <workItem from="1527233991871" duration="28000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2362000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.1427614" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19101876" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32952926" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="File Transfer" order="7" weight="0.32952926" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/View/Intermediary/MortEleven_m.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4972">
+          <caret line="226" selection-start-line="226" selection-end-line="226" />
+          <folding>
+            <element signature="n#style#0;n#input#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Intermediary/MortEleven_m.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4972">
+          <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
+          <folding>
+            <element signature="n#style#0;n#input#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Intermediary/MortEleven_m.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4950">
+          <caret line="225" column="26" lean-forward="true" selection-start-line="225" selection-start-column="26" selection-end-line="225" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#input#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/yewualls.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conf/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Intermediary/MortEleven_m.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="916">
+          <caret line="227" column="22" selection-start-line="227" selection-start-column="22" selection-end-line="227" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#input#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Admin/addindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

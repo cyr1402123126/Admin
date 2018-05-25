@@ -219,7 +219,7 @@
                             <h4 class="h4">赎楼</h4>
                             <form action="/Admin/Intermediary/mPublicFun" method="post" id="info_form2"  enctype="multipart/form-data">
                                 <div style="margin-left:40px;font-size: 18px;margin-bottom:10px;">
-                                    赎楼地点：<select type="text" style="margin-left: 48px;width: 90px;" name="sl_address">
+                                    赎楼地点：<select type="text" style="margin-left: 48px;width: 90px;height: 30px;" name="sl_address">
                                     <option value="0">请选择</option>
                                     <option value="1" <?php echo  $data['sl_address']==1?'selected':'' ?>>银行</option>
                                     <option value="2" <?php echo $data['sl_address']==2?'selected':'' ?>>机构</option>
@@ -233,7 +233,7 @@
                                 </div>
                                 <div style="margin-left: 39px;">
                                     <label class="property" >还款证明：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                    <input style="left: 50px;position: relative;" type="file" id="path70" name="repayment_certificate">
+                                    <input style="left: 56px;position: relative;" type="file" id="path70" name="repayment_certificate">
                                     <input style="left: 138px;bottom: 36px;" type="button" class="choose" value="选择文件" onclick="path70.click()">
                                     <a href="/Admin/Intermediary/preview?zd=repayment_certificate&id=" target="_blank" class="btn btn1 preview" style="position:relative;top: -38px;left: 292px;" name="repayment_certificate">预览</a>
                                 </div>

@@ -1,4 +1,4 @@
-<aside class="main-sidebar">
+﻿<aside class="main-sidebar">
   <section class="sidebar">
     <ul class="sidebar-menu">
 
@@ -32,43 +32,14 @@
         </li>
 
         <?php }?>
-
-        <?php if(in_array('81',$levels)){?>
-
-        <li class='treeview <?php if($isUclient == 'Monetary'){?>active<?php }?>'>
-        <a href="#">
-            <i class="fa fa-dashboard"></i> <span>冠成自有现金业务</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-            <?php if(in_array('82',$_SESSION['level'])){?>
-            <li><a href="/Admin/Monetary/index"><i class="fa fa-circle-o"></i>速分贷列表</a></li>
-            <?php }?>
-            <!--<?php if(in_array('83',$_SESSION['level'])){?>
-            <li><a class="addindex" href="/Admin/Monetary/addindex"><i class="fa fa-plus-square"></i> 速分贷添加</a></li>
-            <?php }?>-->
-            <?php if(in_array('84',$_SESSION['level'])){?>
-            <li><a href="/Admin/Monetary/indexsd"><i class="fa fa-circle-o"></i>速贷列表</a></li>
-            <?php }?>
-            <!--<?php if(in_array('85',$_SESSION['level'])){?>
-            <li><a class="addindex" href="/Admin/Monetary/addindexsd"><i class="fa fa-plus-square"></i> 速贷添加</a></li>
-            <?php }?>-->
-            <?php if(in_array('86',$_SESSION['level'])){?>
-            <li><a class="addindex" href="/Admin/Monetary/listCustomer"><i class="fa fa-circle-o"></i> 现金客户列表</a></li>
-            <?php }?>
-            <?php if(in_array('90',$_SESSION['level'])){?>
-            <li><a class="addindex" href="/Admin/Monetary/settle"><i class="fa fa-circle-o"></i>已结清列表</a></li>
-            <?php }?>
-        </ul>
-        </li>
-        <?php }?>
         <li class='treeview <?php if($isUclient == 'intermediary'){?>active<?php }?>'>
             <a href="#">
                 <i class="fa fa-dashboard"></i> <span>居间业务</span> <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
                 <li><a class="addindex" href="/Admin/Intermediary/application"><i class="fa fa-plus-square"></i>填写申请表</a></li>
-                <li><a class="addindex" href="/Admin/Intermediary/mort"><i class="fa fa-plus-square"></i>抵押贷</a></li>
-                <li><a class="addindex" href="/Admin/Intermediary/credit"><i class="fa fa-plus-square"></i>信用贷</a></li>
+                <!-- <li><a class="addindex" href="/Admin/Intermediary/mort"><i class="fa fa-plus-square"></i>抵押贷</a></li>
+                <li><a class="addindex" href="/Admin/Intermediary/credit"><i class="fa fa-plus-square"></i>信用贷</a></li> -->
                 <li><a class="addindex" href="/Admin/Intermediary/index"><i class="fa fa-plus-square"></i>客户列表</a></li>
                 
             </ul>

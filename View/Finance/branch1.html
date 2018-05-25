@@ -7,7 +7,6 @@
     <title>后台管理</title>
     <include file="common:css" />
     <script src="__PUBLIC__/admin/js/branch.js"></script>
-
 </head>
 <style type="text/css">
     .table-bordered {
@@ -30,7 +29,7 @@
         display: inline-block;
         text-align: center;
         line-height: 20px;
-        margin-left: 116px;
+        margin-left: 20px;
         border-radius: 3px;
         overflow: hidden;
         border:0 ;
@@ -55,16 +54,12 @@
         font-size: 15px;
     }
     .table {
-        width: 100%;
+        width: 50%;
         font-size: 15px;
         margin-top: 15px;
-        text-align: center;
     }
     b {
         font-size: 15px;
-    }
-    td{
-      width: 19%;
     }
    
 </style>
@@ -91,6 +86,9 @@
             <div class="tab-pane fade active in" id="home">
                 <div class="box-body">
                     <form action="/Admin/Finance/branch" method="post" onsubmit="return checkform()">
+                       
+                        分部：<select name="branch_id" class="input" id="sbranch">
+                              </select>
                         年份：<select name="year" class="sinput input" id="year">
                               <option>2018</option>
                               <option>2019</option>
@@ -102,7 +100,6 @@
                               <option>2025</option>
                             </select>
                         月份：<select name="month" class="sinput input" id="month">
-                              <option value="0">请选择</option>
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -116,72 +113,32 @@
                               <option>11</option>
                               <option>12</option>
                             </select>
-                        <input type="button" name="month-self" value="本年累积" class="tianjia so">
-                        <a href="/Admin/Finance/add"><input type="button" name="add" value="添加" class="tianjia so"></a>
-                       </form>
                         <table border="1" id="lyt" cellpadding="80px" class="table table-bordered table-hover">
                             <tr>
-                                <td>部门</td>
-                                <td>福永分部</td>
-                                <td>西乡分部</td>
-                                <td>科技园分部</td>
-                                <td>南山分部</td>
+                                <td>项目</td>
+                                <td>本月金额</td>
+                                <td>本年累计</td>
                             </tr>
                             <tr>
-                                <td colspan="5"><b>营业收入</b></td>
+                                <td colspan="3"><b>营业收入</b></td>
                             </tr>
                             <tr>
                                 <td>中介费收入</td>
-                                <td>{$fy_data['agency_fee']}</td>
-                                <td>{$xx_data['agency_fee']}</td>
-                                <td>{$kjy_data['agency_fee']}</td>
-                                <td>{$ns_data['agency_fee']}</td>
+                                <td><input class="input info" type="text" name="agency_fee"></td>
+                                <td class="lj" ljz="agency_fee"></td>
                             </tr>
                             <tr>
                                 <td>手续及融资费收入</td>
-                                <td>{$fy_data['financing']}</td>
-                                <td>{$xx_data['financing']}</td>
-                                <td>{$kjy_data['financing']}</td>
-                                <td>{$ns_data['financing']}</td>
+                                <td><input class="input info" type="text" name="financing"></td>
+                                <td class="lj" ljz="financing"></td>
                             </tr>
                             <tr>
                                 <td>客户定金</td>
-                                <td>{$fy_data['deposit']}</td>
-                                <td>{$xx_data['deposit']}</td>
-                                <td>{$kjy_data['deposit']}</td>
-                                <td>{$ns_data['deposit']}</td>
+                                <td><input  class="input info" type="text" name="deposit"></td>
+                                <td class="lj" ljz="deposit"></td>
                             </tr>
-                            </tr>
-                            <tr>
-                                <td>其他1</td>
-                                <td>{$fy_data['income_one']}</td>
-                                <td>{$xx_data['income_one']}</td>
-                                <td>{$kjy_data['income_one']}</td>
-                                <td>{$ns_data['income_one']}</td>
-                            </tr>
-                            <tr>
-                                <td>其他2</td>
-                                <td>{$fy_data['income_two']}</td>
-                                <td>{$xx_data['income_two']}</td>
-                                <td>{$kjy_data['income_two']}</td>
-                                <td>{$ns_data['income_two']}</td>
-                            </tr>
-                            <tr>
-                                <td>其他3</td>
-                                <td>{$fy_data['income_three']}</td>
-                                <td>{$xx_data['income_three']}</td>
-                                <td>{$kjy_data['income_three']}</td>
-                                <td>{$ns_data['income_three']}</td>
-                            </tr>
-                            <tr>
-                                <td>备注</td>
-                                <td>{$fy_data['income_one_text']}{$fy_data['income_two_text']}{$fy_data['income_three_text']}</td>
-                                <td>{$xx_data['income_one_text']}{$xx_data['income_two_text']}{$xx_data['income_three_text']}</td>
-                                <td>{$kjy_data['income_one_text']}{$kjy_data['income_two_text']}{$kjy_data['income_three_text']}</td>
-                                <td>{$ns_data['income_one_text']}{$ns_data['income_two_text']}{$ns_data['income_three_text']}</td>
-                            </tr><!--
                             <tr class="tjtr">
-                                <td colspan="5" style="text-align: center"><button type="button" class="tianjia so">添加</button></td>
+                                <td colspan="3" style="text-align: center"><button type="button" class="tianjia so">添加</button></td>
                             </tr>
                             <tr class="adds">
                                 <td><input  class="input info" type="text" name="income_one_text" placeholder="项目名称"></td>
@@ -202,142 +159,85 @@
                                 <td>其他</td>
                                 <td><input  class="input info" type="text" name="other_income"  placeholder="请填入金额,单位元"></td>
                                 <td class="lj" ljz="other_income"></td>
-                            </tr>-->
+                            </tr>
                             <tr>
-                                <td colspan="5"><b>营业利润</b></td>
+                                <td colspan="3"><b>营业利润</b></td>
                             </tr>
                             <tr>
                                 <td>营业利润</td>
-                                <td>{$fy_data['operating_profit']}</td>
-                                <td>{$xx_data['operating_profit']}</td>
-                                <td>{$kjy_data['operating_profit']}</td>
-                                <td>{$ns_data['operating_profit']}</td>
+                                <td><input class="input info" type="text" name="operating_profit"></td>
+                                <td class="lj" ljz="operating_profit"></td>
                             </tr>
                             <tr>
-                                <td colspan="5"><b>费用</b></td>
+                                <td colspan="3"><b>费用</b></td>
                             </tr>
                             <tr>
                                 <td>工资及社保</td>
-                                <td>{$fy_data['wages']}</td>
-                                <td>{$xx_data['wages']}</td>
-                                <td>{$kjy_data['wages']}</td>
-                                <td>{$ns_data['wages']}</td>
+                                <td><input class="input info fys gz" type="text" name="wages"></td>
+                                <td class="lj" ljz="wages"></td>
                             </tr>
                             <tr>
                                 <td>宿舍租金及水电、煤气费</td>
-                                <td>{$fy_data['dormitory_rent']}</td>
-                                <td>{$xx_data['dormitory_rent']}</td>
-                                <td>{$kjy_data['dormitory_rent']}</td>
-                                <td>{$ns_data['dormitory_rent']}</td>
+                                <td><input class="input info fys ss" type="text" name="dormitory_rent"></td>
+                                <td class="lj" ljz="dormitory_rent"></td>
                             </tr>
                             <tr>
                                 <td>办公场地租金</td>
-                                <td>{$fy_data['office_rent']}</td>
-                                <td>{$xx_data['office_rent']}</td>
-                                <td>{$kjy_data['office_rent']}</td>
-                                <td>{$ns_data['office_rent']}</td>
+                                <td><input class="input info fys bgc" type="text" name="office_rent"></td>
+                                <td class="lj" ljz="office_rent"></td>
                             </tr>
                             <tr>
                                 <td>网络费</td>
-                                <td>{$fy_data['network_fee']}</td>
-                                <td>{$xx_data['network_fee']}</td>
-                                <td>{$kjy_data['network_fee']}</td>
-                                <td>{$ns_data['network_fee']}</td>
+                                <td><input class="input info fys wlf" type="text" name="network_fee"></td>
+                                <td class="lj" ljz="network_fee"></td>
                             </tr>
                             <tr>
                                 <td>停车费</td>
-                                <td>{$fy_data['parking_rate']}</td>
-                                <td>{$xx_data['parking_rate']}</td>
-                                <td>{$kjy_data['parking_rate']}</td>
-                                <td>{$ns_data['parking_rate']}</td>
+                                <td><input class="input info fys tcf" type="text" name="parking_rate"></td>
+                                <td class="lj" ljz="parking_rate"></td>
                             </tr>
                             <tr>
                                 <td>办公费用</td>
-                                <td>{$fy_data['office_cost']}</td>
-                                <td>{$xx_data['office_cost']}</td>
-                                <td>{$kjy_data['office_cost']}</td>
-                                <td>{$ns_data['office_cost']}</td>
+                                <td><input class="input info fys bgf" type="text" name="office_cost"></td>
+                                <td class="lj" ljz="office_cost"></td>
                             </tr>
                             <tr>
                                 <td>饮用水</td>
-                                <td>{$fy_data['drinking_water']}</td>
-                                <td>{$xx_data['drinking_water']}</td>
-                                <td>{$kjy_data['drinking_water']}</td>
-                                <td>{$ns_data['drinking_water']}</td>
+                                <td><input class="input info fys yys" type="text" name="drinking_water"></td>
+                                <td class="lj" ljz="drinking_water"></td>
                             </tr>
                             <tr>
                                 <td>话费</td>
-                                <td>{$fy_data['bill']}</td>
-                                <td>{$xx_data['bill']}</td>
-                                <td>{$kjy_data['bill']}</td>
-                                <td>{$ns_data['bill']}</td>
+                                <td><input class="input info fys hf" type="text" name="bill"></td>
+                                <td class="lj" ljz="bill"></td>
                             </tr>
                             <tr>
                                 <td>广告</td>
-                                <td>{$fy_data['advertisement']}</td>
-                                <td>{$xx_data['advertisement']}</td>
-                                <td>{$kjy_data['advertisement']}</td>
-                                <td>{$ns_data['advertisement']}</td>
+                                <td><input class="input info fys gg" type="text" name="advertisement"></td>
+                                <td class="lj" ljz="advertisement"></td>
                             </tr>
                             <tr>
                                 <td>跟单费</td>
-                                <td>{$fy_data['documentary_charges']}</td>
-                                <td>{$xx_data['documentary_charges']}</td>
-                                <td>{$kjy_data['documentary_charges']}</td>
-                                <td>{$ns_data['documentary_charges']}</td>
+                                <td><input class="input info fys gdf" type="text" name="documentary_charges"></td>
+                                <td class="lj" ljz="documentary_charges"></td>
                             </tr>
                             <tr>
                                 <td>设备</td>
-                                <td>{$fy_data['equipment']}</td>
-                                <td>{$xx_data['equipment']}</td>
-                                <td>{$kjy_data['equipment']}</td>
-                                <td>{$ns_data['equipment']}</td>
+                                <td><input class="input info fys sb" type="text" name="equipment"></td>
+                                <td class="lj" ljz="equipment"></td>
                             </tr>
                             <tr>
                                 <td>活动费</td>
-                                <td>{$fy_data['activities_fee']}</td>
-                                <td>{$xx_data['activities_fee']}</td>
-                                <td>{$kjy_data['activities_fee']}</td>
-                                <td>{$ns_data['activities_fee']}</td>
+                                <td><input class="input info fys hdf" type="text" name="activities_fee"></td>
+                                <td class="lj" ljz="activities_fee"></td>
                             </tr>
                             <tr>
                                 <td>培训费</td>
-                                <td>{$fy_data['training_fee']}</td>
-                                <td>{$xx_data['training_fee']}</td>
-                                <td>{$kjy_data['training_fee']}</td>
-                                <td>{$ns_data['training_fee']}</td>
+                                <td><input class="input info fys pxf" type="text" name="training_fee"></td>
+                                <td class="lj" ljz="training_fee"></td>
                             </tr>
-                            <tr>
-                                <td>其他1</td>
-                                <td>{$fy_data['other_one']}</td>
-                                <td>{$xx_data['other_one']}</td>
-                                <td>{$kjy_data['other_one']}</td>
-                                <td>{$ns_data['other_one']}</td>
-                            </tr>
-                            <tr>
-                                <td>其他2</td>
-                                <td>{$fy_data['other_two']}</td>
-                                <td>{$xx_data['other_two']}</td>
-                                <td>{$kjy_data['other_two']}</td>
-                                <td>{$ns_data['other_two']}</td>
-                            </tr>
-                            <tr>
-                                <td>其他3</td>
-                                <td>{$fy_data['other_three']}</td>
-                                <td>{$xx_data['other_three']}</td>
-                                <td>{$kjy_data['other_three']}</td>
-                                <td>{$ns_data['other_three']}</td>
-                            </tr>
-                            <tr>
-                                <td>备注：</td>
-                                <td>{$fy_data['other_one_text']}{$fy_data['other_two_text']}{$fy_data['other_three_text']}</td>
-                                <td>{$xx_data['other_one_text']}{$xx_data['other_two_text']}{$xx_data['other_three_text']}</td>
-                                <td>{$kjy_data['other_one_text']}{$kjy_data['other_two_text']}{$kjy_data['other_three_text']}</td>
-                                <td>{$ns_data['other_one_text']}{$ns_data['other_two_text']}{$ns_data['other_three_text']}</td>
-                            </tr>
-<!--
                             <tr class="tjtrs">
-                                <td colspan="5" style="text-align: center;"><button type="button" class="tjs so">添加</button></td>
+                                <td colspan="3" style="text-align: center;"><button type="button" class="tjs so">添加</button></td>
                             </tr>
                             <tr class="addss">
                                 <td><input  class="input info" type="text" name="other_one_text" placeholder="项目名称"></td>
@@ -359,42 +259,33 @@
                                 <td><input class="input info fys other" type="text" name="other" placeholder="请填入金额,单位元"></td>
                                 <td class="lj" ljz="other"></td>
                             </tr>
-                           -->
-                            <tr>
-                                <td colspan="5"><b>费用合计</b></td>
-                            </tr>
                             <tr>
                                 <td>费用合计</td>
-                                <td>{$fy_data['total_cost']}</td>
-                                <td>{$xx_data['total_cost']}</td>
-                                <td>{$kjy_data['total_cost']}</td>
-                                <td>{$ns_data['total_cost']}</td>
+                                <td><input class="input info zfy" type="text" readonly name="total_cost" placeholder="不用填写"></td>
+                                <td class="lj" ljz="total_cost"></td>
                             </tr>
                             <tr>
-                                <td colspan="5"><b>利润</b></td>
+                                <td colspan="3"><b>利润</b></td>
                             </tr>
                             <tr>
                                 <td>利润</td>
-                                <td>{$fy_data['profit']}</td>
-                                <td>{$xx_data['profit']}</td>
-                                <td>{$kjy_data['profit']}</td>
-                                <td>{$ns_data['profit']}</td>
+                                <td><input class="input info" type="text" name="profit"></td>
+                                <td class="lj" ljz="profit"></td>
                             </tr>
                             <tr>
-                                <td colspan="5"><b>分配人</b></td>
+                                <td colspan="3"><b>分配人</b></td>
                             </tr>
                             <tr>
                                 <td>分配人</td>
-                                <td>{$fy_data['assignor']}</td>
-                                <td>{$xx_data['assignor']}</td>
-                                <td>{$kjy_data['assignor']}</td>
-                                <td>{$ns_data['assignor']}</td>
+                                <td><input class="input info" type="text" name="assignor"></td>
+                                <td></td>
                             </tr>
                             <tr>
-                                <td colspan="5" style="text-align:center;"><input type="submit" class="btns">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btns" value="生成excle" id="makexcle"></td>
+                                <td colspan="3" style="text-align:center;"><input type="submit" class="btns">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btns" value="生成excle" id="makexcle"></td>
                             </tr>
                             
                         </table>
+                    </form>
                 </div>
             </div>
             </div>
@@ -575,7 +466,7 @@
     //make excel
     $("#makexcle").click(function(){
         var month=$("#month").val();
-        var branch=[1];
+        var branch=$("#sbranch").val();
         var year=$("#year").val();
         window.location="/Admin/Finance/makexcle?branch="+branch+"&month="+month+"&year="+year
     });

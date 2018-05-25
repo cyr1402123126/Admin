@@ -195,7 +195,6 @@
                           <label class="col-md-2 control-label">手续费比例：</label>
                           <div class="col-md-4">
                             <select class="form-control requires input0" name="ssfbl" id="ssfbl">
-                              <option value="0">无</option>
                               <option value="0.01">1%</option>
                               <option value="0.02">2%</option>
                               <option value="0.03">3%</option>
@@ -207,7 +206,7 @@
                         <div class="form-group">
                           <label class="col-md-2 control-label">贷款期数：</label>
                           <div class="col-md-4">
-                            <select class="form-control input2" required name="num" id="qs">
+                            <select class="form-control requires input2" name="num" id="qs">
                               <option value="" selected disabled>请选择</option>
                               <option value="1">1</option>
                               <option value="2">2</option>
@@ -216,7 +215,7 @@
                           </div>
                           <label class="col-md-2 control-label">手续费：</label>
                           <div class="col-md-4">
-                            <input type="text" class="form-control requires input2" value="0" name="fee" id="sxf"  readonly = "readonly">
+                            <input type="text" class="form-control requires input2" value="" name="fee" id="sxf"  readonly = "readonly">
                           </div>
                         </div>
 
@@ -225,26 +224,8 @@
                           <div class="col-md-4">
                             <!-- <input type="text" class="form-control requires input2" value="" name="marginratio" id="bzjbl" placeholder="必填"> -->
                             <select class="form-control requires input2" name="marginratio" id="bzjbl">
-                              <option value="0.01">1%</option>
-                              <option value="0.02">2%</option>
                               <option value="0.03">3%</option>
-                              <option value="0.04">4%</option>
                               <option value="0.05">5%</option>
-                              <option value="0.06">6%</option>
-                              <option value="0.07">7%</option>
-                              <option value="0.08">8%</option>
-                              <option value="0.09">9%</option>
-                              <option value="0.10">10%</option>
-                              <option value="0.11">11%</option>
-                              <option value="0.12">12%</option>
-                              <option value="0.13">13%</option>
-                              <option value="0.14">14%</option>
-                              <option value="0.15">15%</option>
-                              <option value="0.16">16%</option>
-                              <option value="0.17">17%</option>
-                              <option value="0.18">18%</option>
-                              <option value="0.19">19%</option>
-                              <option value="0.20">20%</option>
                             </select>
                           </div>
                           <label class="col-md-2 control-label">保证金：</label>
@@ -304,35 +285,30 @@
                         <div class="form-group">
                           <label class="col-md-2 control-label">部门：</label>
                           <div class="col-md-4">
-                            <select class="form-control bumen input2" required name="branch" onchange="fp(this.value)">
+                            <select class="form-control bumen requires input2" name="branch" onchange="fp(this.value)">
                                     <option value='请选择' disabled selected>请选择</option>
-                              <option value=16>宝安1部总监</option>
-                              <option value=17>宝安1部</option>
-                              <option value=18>宝安2部总监</option>
-                              <option value=19>宝安2部</option>
-                              <option value=30>现金1部总监</option>
-                              <option value=29>现金1部</option>
-                              <option value=7>现金2部总监</option>
-                              <option value=8>现金2部</option>
-                              <option value=25>现金3部总监</option>
-                              <option value=9>现金3部</option>
-                              <option value=33>现金4部</option>
+                                    <option value=7>丽湾分部总监</option>
+                                    <option value=8>丽湾分部</option>
+                                    <option value=16>朗苑金融门店部总监</option>
+                                    <option value=17>朗苑金融门店部</option>
+                                    <option value=18>诚和金融门店部总监</option>
+                                    <option value=19>诚和金融门店部</option>
+                              <option value=30>现金1部经理</option>
+                              <option value=29>现金部</option>
+
+
                             </select>
                           </div>
                           <label class="col-md-2 control-label">业务员：</label>
                           <div class="col-md-4">
                            <!--  <input type="text" class="form-control requires input2" value="" name="Salesman" placeholder="必填"> -->
-                            <select class="form-control input2" value="" id="ywy" name="Salesman" required>
+                            <select class="form-control requires input2" value="" id="ywy" name="Salesman">
+                              
                             </select>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-2 control-label">身份证号：</label>
-                          <div class="col-md-4">
-                            <input type="text" class="form-control requires input0" value="" name="cardid" placeholder="必填">
-                          </div>
-
                           <label class="col-md-2 control-label">累计利息：</label>
                           <div class="col-md-4">
                             <input type="text" class="form-control requires input0" value="" name="accumulative" id="ljlx"  readonly="readonly">
@@ -546,11 +522,7 @@
           var d = new Date(st);
           d.setMonth(d.getMonth()+qss);
           
-          if(((d.getMonth()<9?'0':'')+(d.getMonth()))==00 && (((d.getDate()<10?'0':'')+(d.getDate()-1))==00)){
-
-           var et=(d.getFullYear()-1)+'-'+12+'-'+31;
-
-          }else if(((d.getDate()<10?'0':'')+(d.getDate()-1))==00){
+          if(((d.getDate()<10?'0':'')+(d.getDate()-1))==00){
 
             if(((d.getMonth()<9?'0':'')+(d.getMonth()))==04 || ((d.getMonth()<9?'0':'')+(d.getMonth()))==06 || ((d.getMonth()<9?'0':'')+(d.getMonth()))==09 || ((d.getMonth()<9?'0':'')+(d.getMonth()))==11){
               var et=d.getFullYear()+'-'+((d.getMonth()<9?'0':'')+(d.getMonth()))+'-'+30;
@@ -591,11 +563,7 @@
         }
         d.setMonth(d.getMonth()+qss);
         //4、6、9、11
-        if(((d.getMonth()<9?'0':'')+(d.getMonth()))==00 && (((d.getDate()<10?'0':'')+(d.getDate()-1))==00)){
-
-           var et=(d.getFullYear()-1)+'-'+12+'-'+31;
-
-        }else if(((d.getDate()<10?'0':'')+(d.getDate()-1))==00){
+        if(((d.getDate()<10?'0':'')+(d.getDate()-1))==00){
 
           if(((d.getMonth()<9?'0':'')+(d.getMonth()))==04 || ((d.getMonth()<9?'0':'')+(d.getMonth()))==06 || ((d.getMonth()<9?'0':'')+(d.getMonth()))==09 || ((d.getMonth()<9?'0':'')+(d.getMonth()))==11){
             var et=d.getFullYear()+'-'+((d.getMonth()<9?'0':'')+(d.getMonth()))+'-'+30;
@@ -610,7 +578,7 @@
           }else{
             var et=d.getFullYear()+'-'+((d.getMonth()<9?'0':'')+(d.getMonth()))+'-'+31;
           }
-
+          
         }else{
           var et=d.getFullYear()+'-'+((d.getMonth()<9?'0':'')+(d.getMonth()+1))+'-'+(d.getDate()<11?'0':'')+(d.getDate()-1);
         }
@@ -662,17 +630,12 @@
   }
 
   function fp(rid){
-        if(rid=='33'){
-            $("#ywy").empty();
-            $("#ywy").append("<option value='65'>陈浩</option><option value='66'>宋远翔</option><option value='127'>刘创</option><option value='128'>纪雪铭</option><option value='136'>王俪瑄</option>");
-        }else{
-           $.post("/Admin/Monetary/memberss",{rid,rid},function(data){
+        $.post("/Admin/Monetary/memberss",{rid,rid},function(data){
             $("#ywy").empty();
             for(i=0;i<data.length;i++){
                 $("#ywy").append("<option value="+data[i]['id']+">"+data[i]['username']+"</option>");
             }
-          })
-        }
+        })
     }
 
     $(function(){
