@@ -2,101 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e47232b-3496-4266-92b2-bbf07e721777" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Admin/addindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Admin/addindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Admin/addrank.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Admin/addrank.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Admin/addrank10.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Admin/addrank10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Admin/addrank11.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Admin/sqrank1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Admin/sqrank1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Apply/administrate.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/administrate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Apply/index1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/index1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Apply/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/index2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Apply/investigate1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/investigate1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Apply/settlement.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/settlement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Apply/sign1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/sign1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Apply/yewuone1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/yewuone1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Apply/yewuones1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/yewuones1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Apply/yewuthree1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/yewuthree1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Apply/yewuthrees1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/yewuthrees1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Apply/yewutwo.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/yewutwo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Apply/yewutwo1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Apply/yewutwo1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Base/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Base/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Base/index8.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Base/index8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/CarLoan/apply1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/apply1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/CarLoan/carfive.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/carfive.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/CarLoan/carfour.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/carfour.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/CarLoan/carone.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/carone.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/CarLoan/carsix.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/carsix.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/CarLoan/carthree.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/carthree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/CarLoan/cartwo.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/cartwo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/CarLoan/settlement.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/settlement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/CarLoan/yewuall.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/CarLoan/yewuall.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Finance/add1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Finance/add1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Finance/branch.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Finance/branch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Finance/branch1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Finance/branch1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Finance/branch2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Finance/branch2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Finance/index1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Finance/index1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditFive_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditFive_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditFive_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditFive_m1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditFour_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditFour_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditFour_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditFour_m1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditSix_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditSix_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditThree_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditThree_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditThree_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditThree_m1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/CreditTwo_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/CreditTwo_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortEight_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortEight_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortEight_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortEight_m1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortEleven_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortEleven_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortFive_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortFive_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortFive_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortFive_m1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortFour_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortFour_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortFour_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortFour_m1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortNine_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortNine_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortNine_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortNine_m1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortSeven_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortSeven_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortSeven_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortSeven_m1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortSix_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortSix_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortTen_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortTen_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortTen_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortTen_m1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortThree_m1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortThree_m1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/MortTwo_m.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/MortTwo_m.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Intermediary/application1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Intermediary/application1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Login/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/addindex2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/addindex2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/addindex3.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/addindex3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/addindex4.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/addindex4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/addindexsd1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/addindexsd1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/addindexsd2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/addindexsd2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/addindexsd3.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/addindexsd3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/edit1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/edit1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/edit2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/edit2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/edit3.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/edit3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/editsd2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/editsd2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/editsd3.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/editsd3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/index1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/index1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/index2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/index3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/index4.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/index4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/index5.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/index5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/indexsd1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/indexsd1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/indexsd2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/indexsd2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/indexsd3.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/indexsd3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/indexsd4.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/indexsd4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/infos0.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/infos0.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/infos1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/infos1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/infos2.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/infos2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/infoss.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/infoss.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/listCustomers.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/listCustomers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/modify1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/modify1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/modifysd1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/modifysd1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/settle1.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/settle1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Monetary/yewu.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Monetary/yewu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/common/side.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/common/side.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/common/side5.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/common/side5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/common/side6.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/common/side6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/common/side7.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/common/side7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -113,8 +20,8 @@
       <file leaf-file-name="addindex.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/View/Admin/addindex.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+            <state relative-caret-position="352">
+              <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -234,12 +141,12 @@
       <workItem from="1527214505369" duration="2264000" />
       <workItem from="1527216795377" duration="61000" />
       <workItem from="1527216868074" duration="9000" />
-      <workItem from="1527233991871" duration="28000" />
+      <workItem from="1527233991871" duration="210000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2362000" />
+    <option name="totallyTimeSpent" value="2544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -345,8 +252,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/View/Admin/addindex.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+        <state relative-caret-position="352">
+          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
         </state>
       </provider>
     </entry>
