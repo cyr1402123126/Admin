@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e47232b-3496-4266-92b2-bbf07e721777" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Admin/addindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Admin/addindex.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,7 +19,7 @@
       <file leaf-file-name="addindex.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/View/Admin/addindex.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="352">
               <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
             </state>
           </provider>
@@ -141,12 +140,12 @@
       <workItem from="1527214505369" duration="2264000" />
       <workItem from="1527216795377" duration="61000" />
       <workItem from="1527216868074" duration="9000" />
-      <workItem from="1527233991871" duration="1941000" />
+      <workItem from="1527233991871" duration="2159000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4275000" />
+    <option name="totallyTimeSpent" value="4493000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -252,7 +251,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/View/Admin/addindex.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="352">
           <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
         </state>
       </provider>
