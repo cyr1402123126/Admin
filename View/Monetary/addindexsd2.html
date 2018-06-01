@@ -306,17 +306,14 @@
                           <div class="col-md-4">
                             <select class="form-control bumen input2" required name="branch" onchange="fp(this.value)">
                                     <option value='请选择' disabled selected>请选择</option>
-                              <option value=16>宝安1部总监</option>
-                              <option value=17>宝安1部</option>
-                              <option value=18>宝安2部总监</option>
-                              <option value=19>宝安2部</option>
-                              <option value=30>现金1部总监</option>
-                              <option value=29>现金1部</option>
-                              <option value=7>现金2部总监</option>
-                              <option value=8>现金2部</option>
-                              <option value=25>现金3部总监</option>
-                              <option value=9>现金3部</option>
-                              <option value=33>现金4部</option>
+                                    <option value=7>丽湾分部总监</option>
+                                    <option value=8>丽湾分部</option>
+                                    <option value=16>朗苑金融门店部总监</option>
+                                    <option value=17>朗苑金融门店部</option>
+                                    <option value=18>诚和金融门店部总监</option>
+                                    <option value=19>诚和金融门店部</option>
+                                    <option value=30>现金1部经理</option>
+                                    <option value=29>现金部</option>
                             </select>
                           </div>
                           <label class="col-md-2 control-label">业务员：</label>
@@ -328,11 +325,6 @@
                         </div>
 
                         <div class="form-group">
-                          <label class="col-md-2 control-label">身份证号：</label>
-                          <div class="col-md-4">
-                            <input type="text" class="form-control requires input0" value="" name="cardid" placeholder="必填">
-                          </div>
-
                           <label class="col-md-2 control-label">累计利息：</label>
                           <div class="col-md-4">
                             <input type="text" class="form-control requires input0" value="" name="accumulative" id="ljlx"  readonly="readonly">
@@ -662,17 +654,12 @@
   }
 
   function fp(rid){
-        if(rid=='33'){
-            $("#ywy").empty();
-            $("#ywy").append("<option value='65'>陈浩</option><option value='66'>宋远翔</option><option value='127'>刘创</option><option value='128'>纪雪铭</option><option value='136'>王俪瑄</option><option value='118'>何思敏</option><option value='147'>郭丽萍</option>");
-        }else{
-           $.post("/Admin/Monetary/memberss",{rid,rid},function(data){
+        $.post("/Admin/Monetary/memberss",{rid,rid},function(data){
             $("#ywy").empty();
             for(i=0;i<data.length;i++){
                 $("#ywy").append("<option value="+data[i]['id']+">"+data[i]['username']+"</option>");
             }
-          })
-        }
+        })
     }
 
     $(function(){

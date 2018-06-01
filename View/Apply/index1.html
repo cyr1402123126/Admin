@@ -114,7 +114,7 @@
         line-height: 42px;
         margin-left: 30px;
         position: relative;
-        bottom: 6px;
+        bottom: 3px;
         border: none;
         outline: none;
         font-size: 21px;
@@ -203,12 +203,12 @@
         <div class="border border_specialy" style="height: 553px;">
             <div class="grounp">
                 <label for="input1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>申请人姓名</label>
-                <input name="name" type="text" placeholder="必填" id="input1" class="input" required>
+                <input name="username" type="text" placeholder="必填" id="input1" class="input" required>
             </div>
             <div class="grounp">
                 <label for="input40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>性别</label>
-                <select required name="sex" id="input40" class="select">
-                    <option value="">请选择</option>
+                <select name="sex" id="input40" class="select">
+                    <option value="3">请选择</option>
                     <option value="0">男</option>
                     <option value="1">女</option>
                 </select>
@@ -221,14 +221,13 @@
                 <label for="input2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>手机号码</label>
                 <input type="number" name="phone" placeholder="必填" id="input2" class="input" required>
             </div>
-            <span id="lyhs" style="color:red;font-size:16px;display:none;">该机主为老用户</span>
             <div class="grounp">
                 <label for="input3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>身份证号码</label>
-                <input type="text" name="cardid" placeholder="必填" id="input3" class="input" required>
+                <input type="number" name="cardId" placeholder="必填" id="input3" class="input" required>
             </div>
             <div class="grounp">
                 <label for="input4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>申请金额</label>
-                <input type="number" name="money" placeholder="必填" id="input4" class="input" required style="width:160px;">&nbsp;&nbsp;<span style="font-size: 22px;color: #747474;">万元</span>
+                <input type="number" name="loan" placeholder="必填" id="input4" class="input" required>
             </div>
             <div class="grounp">
                 <label for="input5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;借款用途</label>
@@ -250,7 +249,7 @@
                 <div class="input divs" style="width: 455px;overflow: hidden;">
                     <label for="room" style="bottom: -5px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;照片
                         <input class="inputs" id="room" name="photo"
-                               onchange="showPicture(this)" type="file" required/>
+                               onchange="showPicture(this)" type="file"/>
                     </label>
                 </div>
             </div>
@@ -373,34 +372,22 @@
         <div class="border">
             <div class="grounp">
                 <label for="input41">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;部门</label>
-                <select name="branch" id="input41" style="width: 250px;" class="bumen sea select" onchange="fp(this.value)" required>
-                                    <option value='' disabled selected>请选择</option>
-                                    <!-- <option value=7>丽湾分部总监</option>
+                <select name="admin_ids" id="input41" style="width: 250px;" class="bumen sea select" onchange="fp(this.value)">
+                                    <option value='请选择' disabled selected>请选择</option>
+                                    <option value=7>丽湾分部总监</option>
                                     <option value=8>丽湾分部</option>
                                     <option value=16>朗苑金融门店部总监</option>
                                     <option value=17>朗苑金融门店部</option>
                                     <option value=18>诚和金融门店部总监</option>
                                     <option value=19>诚和金融门店部</option>
-                                    <option value=30>现金部经理</option>
-                                    <option value=29>现金部</option> -->
-                                  <option value=16>宝安1部总监</option>
-                                  <option value=17>宝安1部</option>
-                                  <option value=18>宝安2部总监</option>
-                                  <option value=19>宝安2部</option>
-                                  <option value=30>现金1部总监</option>
-                                  <option value=29>现金1部</option>
-                                  <option value=7>现金2部总监</option>
-                                  <option value=8>现金2部</option>
-                                  <option value=25>现金3部总监</option>
-                                  <option value=9>现金3部</option>
-                                  <option value=33>现金4部</option>
-
+                        <option value=30>现金部经理</option>
+                    <option value=29>现金部</option>
                  </select>
             </div>
             <div class="grounp">
                 <label for="input43">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>业务员</label>
-                <select  class="members sea select" name="Salesman" required>
-                                    <option value=''>请选择</option>
+                <select  class="members sea select" name="admin_id">
+                                    <option value=0>请选择</option>
                                 </select>
             </div>
         </div>
@@ -446,23 +433,12 @@
     })*/
     //分配客户
     function fp(rid){
-        // $.post("/Admin/Apply/memberss",{rid,rid},function(data){
-        //     $(".members").empty();
-        //     for(i=0;i<data.length;i++){
-        //         $(".members").append("<option value="+data[i]['id']+">"+data[i]['username']+"</option>");
-        //     }
-        // })
-        if(rid=='33'){
-            $(".members").empty();
-            $(".members").append("<option value='65'>陈浩</option><option value='66'>宋远翔</option><option value='127'>刘创</option><option value='128'>纪雪铭</option><option value='136'>王俪瑄</option><option value='118'>何思敏</option><option value='147'>郭丽萍</option><option value='172'>冠成金服</option>");
-        }else{
-           $.post("/Admin/Apply/memberss",{rid,rid},function(data){
+        $.post("/Admin/Apply/memberss",{rid,rid},function(data){
             $(".members").empty();
             for(i=0;i<data.length;i++){
                 $(".members").append("<option value="+data[i]['id']+">"+data[i]['username']+"</option>");
             }
-          })
-        }
+        })
     }
 
     $(function(){
@@ -470,18 +446,15 @@
         fp(rid);
 
     });
-    flags=true;
+    
     function checkform(){
-        if(flags){
-            flags=false;
-            $("#tjbtn").hide();
-            return true;
-        }else{
-            alert("不要重复提交");
+        if($("#input40").val()==3 || $("#input41").val()==null){
+            alert("请完善带红色星号*的必填信息");
             return false;
+        }else{
+            return true;
         }
     }
-    
     function showPicture(img) {
         var objUrl = getObjectURL(img.files[0]);
         console.log(getObjectURL(img.files[0]))
@@ -490,7 +463,6 @@
             $("#imgss").width(450).height(528);
         }
     }
-
     function getObjectURL(file) {
         var url = null;
         if (window.createObjectURL != undefined) { // basic
@@ -503,21 +475,6 @@
 
         return url;
     }
-
-    $("#tjbtn").click(function(){
-        // alert("11")
-    });
-
-    $("#input2").blur(function(){
-        var phone=$(this).val();
-        $.get('/Admin/Apply/selectphone',{phone:phone},function(data){
-            if(data==1){
-                $("#lyhs").show();
-            }else{
-                $("#lyhs").hide();
-            }
-        });
-    });
 
 </script>
 </body>

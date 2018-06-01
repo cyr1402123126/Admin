@@ -386,6 +386,7 @@
      });
 
      $(".upd_jq").click(function(){
+
         var id = $(this).attr('name');
         $.post("/Admin/Monetary/upd_jq",{id:id},function(data){
             if(data==1){
@@ -394,9 +395,6 @@
             }else if(data==2){
                 alert("贷款未结清");
                 window.location.href="/Admin/Monetary/settle";
-            }else{
-                alert("请确认本金余额是否归还");
-                window.location.href="/Admin/Monetary/edit/id/"+id;
             }
 
        });

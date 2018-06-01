@@ -18,15 +18,21 @@
     <include file="common:side" />
     <!-- 左侧结束 -->
 
+    <style type="text/css">
+        h4 {
+            font-size: 15px;
+        }
+    </style>
+
 <div class="content-wrapper">
 <section class="content">
     <div class="row">
         <div class="col-md-12">
-            <div class="box" style="height:1000px;">
-             <h3 class="box-title"><a href="/Admin/Monetary/listCustomer">现金客户</a>>确认信息</h3>
+            <div class="box" style="height:auto;">
+             <h3 class="box-title"><a href="/Admin/Monetary/listCustomer">现金客户</a>><a style="cursor: pointer;" class="goback">还回流程条</a></h3>
                 <div class="information">
                     <div class="sectionOne">
-                        <h4 class="h4">贷前流程</h4>
+                        <h4 class="h4">客户信息查询</h4>
                         
                             <div class="form-group" style="margin-bottom: 0px;">
                                 <p class="property" style="margin-left: 70px;">1、法律诉讼查询 : </p>
@@ -112,9 +118,73 @@
                                 </form>
                                 <a href="/Admin/Apply/preview?zd=lyj&id=" target="_blank" class="btn btn1 preview" style="position:relative;top: -63px;left: 550px;" name="lyj">预览</a>
                             </div>
-                            <div class="form-group" style="margin-top: -50px;margin-left: 113px;">
+                            <div class="form-group" style="margin-top: -60px;">
+                                <p class="property" style="margin-left: 70px;">5、民间查询 : </p>
+                                <form action="/Admin/Apply/yewuone" method="post" enctype="multipart/form-data">
+                                <a href="#" class="btn btn1" style="right: 90px;">查询</a>
+                                <input type="file" style="top: 3px;" id="path8" name="folk_inquiries" onchange="upfile.value=this.value">
+                                <input type="button" class="choose" value="结果上传" onclick="path8.click()">
+                                <input type="hidden" value="" name="id" class="ids">
+                                <input type="hidden" value="folk_inquiries" name="zd">
+                                <input  type="submit" class="btn btn1" style="position:relative;top: -29px;left: 300px;">
+                                </form>
+                                <a href="/Admin/Apply/preview?zd=folk_inquiries&id=" target="_blank" class="btn btn1 preview" style="position:relative;top: -63px;left: 550px;" name="folk_inquiries">预览</a>
+                            </div>
+
+
+                            <div class="form-group" style="margin-top: -60px;">
+                                <form action="/Admin/Apply/yewuoneadd" method="post">
+                                <div class="sectionTwo">
+                                   <h4 class="credit" style="margin: 0 0 10px 0px ;">6、征信查询情况：</h4>
+                                   <div class="form-group">
+                                       <label class="property">征信2个月内查询次数 : </label>
+                                       贷款审批 : <input type="number" name="two_dksp" value="{$data['two_dksp']}" required> 次,
+                                       行用卡审批 : <input type="number" name="two_xyksp" value="{$data['two_xyksp']}" required> 次
+                                   </div>
+                                   <div class="form-group">
+                                       <label class="property">征信3个月内查询次数 : </label>
+                                       贷款审批 : <input type="number" name="three_dksp" value="{$data['three_dksp']}" required> 次,
+                                       行用卡审批 : <input type="number" name="three_xyksp" value="{$data['three_xyksp']}" required> 次
+                                   </div>
+                                   <div class="form-group">
+                                       <label class="property">征信6个月内查询次数 : </label>
+                                       贷款审批 : <input type="number" name="six_dksp" value="{$data['six_dksp']}" required> 次,
+                                       行用卡审批 : <input type="number" name="six_xyksp" value="{$data['six_xyksp']}" required> 次
+                                   </div>
+                               </div>
+                               <div class="sectionThree">
+                                    <div class="first">
+                                        <label class="thanmore">信用卡逾期次数 : </label>
+                                        半年内<input type="number" value="{$data['half_year']}" name="half_year">次，
+                                        两年内<input type="number" value="{$data['two_year']}" name="two_year">次
+                                    </div>
+                                    <div class="second">
+                                        <label>贷款逾期次数 : </label>
+                                        &nbsp;&nbsp;&nbsp;半年内<input type="number" value="{$data['dkhalf_year']}" name="dkhalf_year">次，
+                                        两年内<input type="number" value="{$data['dktwo_year']}" name="dktwo_year">次
+                                    </div>
+                                </div>
+                                <div class="sectionFour">
+                                    <h4 class="h4" style="margin-top: 20px;font-size: 15px;">7、征信显示负债情况</h4>
+                                    <p>贷款余额：&nbsp;&nbsp;&nbsp;<input type="number" value="{$data['dkye']}" name="dkye">万元</p>
+                                    <p>信用贷余额：<input type="number" value="{$data['credits']}" name="credits">万元</p>
+                                    <p>小额余额：&nbsp;&nbsp;&nbsp;<input type="number" value="{$data['xeye']}" name="xeye">万元</p>
+                                    <p>信用卡总额：<input type="number" value="{$data['xykze']}" name="xykze">万元
+                                        <label style="margin-left: 10px;">当前已用：<input type="number" name="xykyy" value="{$data['xykyy']}">万元</label>
+                                    </p>
+                                </div>
+                                <input type="hidden" value="" name="id" class="ids">
+                                <!-- <input  type="submit" class="btn btn1" style="position:relative;top: 0px;left: 300px;"> -->
+                                <!-- </form> -->
+                            </div>
+
+
+                            <div class="form-group" style="margin-left: 113px;">
+                            <!-- <a href="/Admin/Apply/downloadpic?id=" target="_blank" class="btn btn1 downloadpic" style="right: -122px;top: 0px;background: #66cd00";>提交</a> -->
+                            <input  type="submit" class="btn btn1" style="position:relative;top: 0px;left: 120px;background: #66cd00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </form>
                             <a href="/Admin/Apply/downloadpic?id=" target="_blank" class="btn btn1 downloadpic" style="right: -122px;top: 0px;background: #66cd00";>生成文档</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="/Admin/Apply/over?state_id=18&id=" target="_blank" class="btn btn1 over" style="right: -122px;top: 0px;background: #66cd00";>完成</a>
+                            <a href="/Admin/Apply/over?state_id=19&id=" target="_blank" class="btn btn1 over" style="right: -122px;top: 0px;background: #66cd00";>完成</a>
                                 <!-- <button class="btn btn1" style="right: -122px;top: 0px;background: #66cd00";>生成文档</button> -->
                                 <input type="hidden" id="xszd" value="{$str}">
                             </div>
@@ -161,15 +231,18 @@
             
             $(".preview").each(function(){
                 if($.inArray($(this).attr('name'), str)>-1){
-                    $(this).show();
+                    $(this).css('visibility','visible');
                 }else{
-                    $(this).hide();
+                     $(this).css('visibility','hidden');
                 }
                 
             });
             
         });
        
+       $(".goback").click(function(){
+        window.history.back();
+        });
 </script>
 </body>
 </html>

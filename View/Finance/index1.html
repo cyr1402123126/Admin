@@ -65,7 +65,7 @@
     .page a {display: inline-block;padding: 5px 15px;color:#333;font-size:15px; border-radius: 4px;border: 1px solid #ccc;margin-left: 5px;}
     .page a:hover,.page .on {background: #00a3ff;color:#fff}
 
-    .longhub {padding: 34px 0px 0px 2px;margin: 15px;background:#6f5c5c url(__PUBLIC__/admin/images/longhub1.png) no-repeat center top;background-size: 100% auto;height: 855px;padding-top: 80px;text-align: center; }
+    .longhub {padding: 34px 0px 0px 2px;margin: 15px;background:#6f5c5c url(__PUBLIC__/admin/images/longhub1920.png) no-repeat center top;background-size: 100% auto;height: 950px;padding-top: 80px;text-align: center; }
     .longhub h2 {font-size: 30px;color: #ffffff;padding-bottom: 10px;padding-top: 6px;background: -moz-linear-gradient(to right, rgba(255,255,255,-0.85) 10%,#bf1a1e 50%,rgba(255,255,255,-0.85) 90%); /* FF3.6-15 */
         background: -webkit-linear-gradient(to right, rgba(255,255,255,-0.85) 10%,#bf1a1e 50%,rgba(255,255,255,-0.85) 90%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to right, rgba(255,255,255,-0.85) 10%,#bf1a1e 50%,rgba(255,255,255,-0.85) 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */}
@@ -89,6 +89,12 @@
     .xdebug-var-dump {
         display: none!important;
     }
+    .skin-blue .wrapper, .skin-blue .left-side {
+        background-color: #ecf0f5;
+    }
+    .skin-blue .main-sidebar {
+        background: #2a89cd;
+    }
 </style>
 
 <body class="hold-transition skin-blue sidebar-mini" style="background: #2a89cd">
@@ -102,9 +108,23 @@
       <div class="content-wrapper">
 
           <div style="padding-top:20px;margin-left:15px">
-              尊敬的用户，欢迎您回来！
+              尊敬的用户，欢迎您回来！<br>
+              <form action="/Admin/Finance/index" method="GET" class="submit_form" style="width: 80%">
+               <div id="example1_filter" class="dataTables_filter" style="text-align:left;display:inline-block;">
+                 <label id="sjss">
+                   日期<input type="text" onClick="WdatePicker()" name="stime" value="<?php echo $_GET['stime']?>" class="form-control input-sm" placeholder="" aria-controls="example1" autocomplete="off">
+                   至<input type="text" onClick="WdatePicker()" name="endtime" value="<?php echo $_GET['endtime']?>" class="form-control input-sm" placeholder="" aria-controls="example1" autocomplete="off">
+
+                   <a href="javascript:void(0)" onclick="tj()" id="zj" class="so">确定</a>
+                 </label>
+               </div>
+             </form>
           </div>
-          
+          <script>
+                function tj(){
+                  $(".submit_form").submit();
+                } 
+               </script>
 		  <div class="longhub">
               <ul class="clearfix">
                   <h2 class="h2">宝安1部</h2>
@@ -112,65 +132,48 @@
                   <li class="room-small">速分贷</li>
           <li>
               <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-              <!--<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>-->
               <div class="name">
-                  <if condition="$langyuanqd.admin_member_sun neq 0">
-                      <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuanqd['admin_id'];?>/state_id/{$langyuanqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuanqd.admin_member_id}/{$langyuanqd.admin_member_sun}万元</a></div>
-              <else />
               <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $bayb_sfd_k>0?$bayb_sfd_k:0  ?>万元</a></div>
-      </if>
       </li>
           <li>
-              <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-              <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+              <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
               <div class="name">
-                  <if condition="$langyuanfk.admin_member_sun neq 0">
-                      <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuanfk['admin_id'];?>/state_id/{$langyuanfk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuanfk.admin_member_id}/{$langyuanfk.admin_member_sun}万元</a></div>
-              <else />
+              <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $bayb_sfd_y>0?$bayb_sfd_y:0  ?>万元</a></div>
+          </li>
+          <li>
+              <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
+              <div class="name">
               <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $bayb_sfd_l>0?$bayb_sfd_l:0  ?>万元</a></div>
-      </if>
-      </li>
+          </li>
       <li class="room-small">速贷</li>
       <li>
           <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$langyuanqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuanqd['admin_id'];?>/state_id/{$langyuanqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuanqd.admin_member_id}/{$langyuanqd.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $bayb_sd_k>0?$bayb_sd_k:0  ?>万元</a></div>
-  </if>
   </li>
   <li>
-      <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-      <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+      <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
       <div class="name">
-          <if condition="$langyuanfk.admin_member_sun neq 0">
-              <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuanfk['admin_id'];?>/state_id/{$langyuanfk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuanfk.admin_member_id}/{$langyuanfk.admin_member_sun}万元</a></div>
-      <else />
+      <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $bayb_sd_y>0?$bayb_sd_y:0  ?>万元</a></div>
+  </li>
+  <li>
+      <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
+      <div class="name">
       <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $bayb_sd_l>0?$bayb_sd_l:0  ?>万元</a></div>
-      </if>
   </li>
       <li class="room_room">现金贷</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$langyuanfk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuanfk['admin_id'];?>/state_id/{$langyuanfk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuanfk.admin_member_id}/{$langyuanfk.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $zybsum>0?$zybsum:0  ?>万元</a></div>
-  </if>
   </li>
   <li>
       <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-      <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
       <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $ybsum>0?$ybsum:0  ?>万元</a></div>
   </li>
   <li class="room_room">居间业务</li>
   <li>
       <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-      <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
       <div class="name">
           <if condition="$langyuanfk.admin_member_sun neq 0">
               <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuanfk['admin_id'];?>/state_id/{$langyuanfk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuanfk.admin_member_id}/{$langyuanfk.admin_member_sun}万元</a></div>
@@ -180,104 +183,62 @@
   </li>
   <li>
       <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-      <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
       <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $ybsum>0?$ybsum:0  ?>万元</a></div>
   </li>
   <li class="room_room">抵押贷业务</li>
   <li class="room-small">速车贷</li>
   <li>
       <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-      <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
       <div class="name">
-          <if condition="$langyuanfk.admin_member_sun neq 0">
-              <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuanfk['admin_id'];?>/state_id/{$langyuanfk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuanfk.admin_member_id}/{$langyuanfk.admin_member_sun}万元</a></div>
-      <else />
       <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $bayb_cd_k>0?$bayb_cd_k:0  ?>万元</a></div>
-      </if>
   </li>
   <li>
-      <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-      <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+      <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
+      <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $bayb_cd_y>0?$bayb_cd_y:0  ?>万元</a></div>
+  </li>
+  <li>
+      <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
       <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $bayb_cd_l>0?$bayb_cd_l:0  ?>万元</a></div>
   </li>
-  <!--<li>
-      <div class="tit"><i class="fa fa-line-chart"></i>回款</div>
-      <div class="name">
-          <notempty name="admin_member_danss.admin_id">
-              <a href="/Admin/Search/index/name/回款/id/{$admin_member_danss.admin_id}/u_id/{$admin_member_danss.u_id}.html" style="color:#fff">
-                  <else/>
-                  <a href="javascript:;" style="color:#fff">
-          </notempty>
-          <img src="/Public/admin/images/no1.png">{$admin_member_danss.admin_member_id}/<span style="font-size:15px">{$admin_member_danss.hprice}</span>万元</a></div>
-  </li>-->
   </ul>
   <ul class="clearfix">
       <h2 class="h2">宝安2部</h2>
       <li class="room_room">信用贷业务</li>
       <li class="room-small">速分贷</li>
-      <!--<li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>约见</div>
-          <div class="name">
-              <if condition="$chenghe.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghe['admin_id'];?>/state_id/{$chenghe.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghe.admin_member_id}/{$chenghe.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>-->
       <li>
           <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chengheqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chengheqd['admin_id'];?>/state_id/{$chengheqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chengheqd.admin_member_id}/{$chengheqd.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $baeb_sfd_k>0?$baeb_sfd_k:0  ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
+          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $baeb_sfd_y>0?$baeb_sfd_y:0  ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
+          <div class="name">
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $baeb_sfd_l>0?$baeb_sfd_l:0  ?>万元</a></div>
-          </if>
       </li>
       <li class="room-small">速贷</li>
-      <!--<li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>约见</div>
-          <div class="name">
-              <if condition="$chenghe.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghe['admin_id'];?>/state_id/{$chenghe.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghe.admin_member_id}/{$chenghe.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>-->
       <li>
           <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chengheqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chengheqd['admin_id'];?>/state_id/{$chengheqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chengheqd.admin_member_id}/{$chengheqd.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $baeb_sd_k>0?$baeb_sd_k:0  ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
+          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $baeb_sd_y>0?$baeb_sd_y:0  ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
+          <div class="name">
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $baeb_sd_l>0?$baeb_sd_l:0  ?>万元</a></div>
-          </if>
       </li>
       <li class="room_room">现金贷</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
               <if condition="$chenghefk.admin_member_sun neq 0">
                   <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
@@ -287,13 +248,11 @@
       </li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $ebsum>0?$ebsum:0 ?>万元</a></div>
       </li>
       <li class="room_room">居间业务</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
               <if condition="$chenghefk.admin_member_sun neq 0">
                   <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
@@ -303,104 +262,62 @@
       </li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $ebsum>0?$ebsum:0 ?>万元</a></div>
       </li>
       <li class="room_room">抵押贷业务</li>
       <li class="room-small">速车贷</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $baeb_cd_k>0?$baeb_cd_k:0  ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
+          <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $baeb_cd_y>0?$baeb_cd_y:0 ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $baeb_cd_l>0?$baeb_cd_l:0 ?>万元</a></div>
       </li>
-      <!-- <li>
-           <div class="tit"><i class="fa fa-line-chart"></i>回款</div>
-           <div class="name">
-               <notempty name="admin_member_danss.admin_id">
-                   <a href="/Admin/Search/index/name/回款/id/{$admin_member_danss.admin_id}/u_id/{$admin_member_danss.u_id}.html" style="color:#fff">
-                       <else/>
-                       <a href="javascript:;" style="color:#fff">
-               </notempty>
-               <img src="/Public/admin/images/no1.png">{$admin_member_danss.admin_member_id}/<span style="font-size:15px">{$admin_member_danss.hprice}</span>万元</a></div>
-       </li>-->
   </ul>
   <ul class="clearfix">
       <h2 class="h2">现金1部</h2>
       <li class="room_room">信用贷业务</li>
       <li class="room-small">速分贷</li>
-      <!--<li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>约见</div>
-          <div class="name">
-              <if condition="$chenghe.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghe['admin_id'];?>/state_id/{$chenghe.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghe.admin_member_id}/{$chenghe.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>-->
       <li>
           <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chengheqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chengheqd['admin_id'];?>/state_id/{$chengheqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chengheqd.admin_member_id}/{$chengheqd.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjy_sfd_k>0?$xjy_sfd_k:0 ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
+          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjy_sfd_y>0?$xjy_sfd_y:0 ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
+          <div class="name">
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjy_sfd_l>0?$xjy_sfd_l:0 ?>万元</a></div>
-          </if>
       </li>
       <li class="room-small">速贷</li>
-      <!--<li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>约见</div>
-          <div class="name">
-              <if condition="$chenghe.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghe['admin_id'];?>/state_id/{$chenghe.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghe.admin_member_id}/{$chenghe.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>-->
       <li>
           <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chengheqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chengheqd['admin_id'];?>/state_id/{$chengheqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chengheqd.admin_member_id}/{$chengheqd.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjy_sd_k>0?$xjy_sd_k:0 ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
+          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjy_sd_y>0?$xjy_sd_y:0 ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
+          <div class="name">
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjy_sd_l>0?$xjy_sd_l:0 ?>万元</a></div>
-          </if>
       </li>
       <li class="room_room">现金贷</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
               <if condition="$chenghefk.admin_member_sun neq 0">
                   <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
@@ -410,13 +327,11 @@
       </li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $ebsum>0?$ebsum:0 ?>万元</a></div>
       </li>
       <li class="room_room">居间业务</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
               <if condition="$chenghefk.admin_member_sun neq 0">
                   <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
@@ -426,104 +341,62 @@
       </li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $ebsum>0?$ebsum:0 ?>万元</a></div>
       </li>
       <li class="room_room">抵押贷业务</li>
       <li class="room-small">速车贷</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjy_car_k>0?$xjy_car_k:0  ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
+          <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjy_car_y>0?$xjy_car_y:0 ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjy_car_l>0?$xjy_car_l:0 ?>万元</a></div>
       </li>
-      <!-- <li>
-           <div class="tit"><i class="fa fa-line-chart"></i>回款</div>
-           <div class="name">
-               <notempty name="admin_member_danss.admin_id">
-                   <a href="/Admin/Search/index/name/回款/id/{$admin_member_danss.admin_id}/u_id/{$admin_member_danss.u_id}.html" style="color:#fff">
-                       <else/>
-                       <a href="javascript:;" style="color:#fff">
-               </notempty>
-               <img src="/Public/admin/images/no1.png">{$admin_member_danss.admin_member_id}/<span style="font-size:15px">{$admin_member_danss.hprice}</span>万元</a></div>
-       </li>-->
   </ul>
   <ul class="clearfix">
       <h2 class="h2">现金2部</h2>
       <li class="room_room">信用贷业务</li>
       <li class="room-small">速分贷</li>
-      <!--<li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>约见</div>
-          <div class="name">
-              <if condition="$chenghe.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghe['admin_id'];?>/state_id/{$chenghe.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghe.admin_member_id}/{$chenghe.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>-->
       <li>
           <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chengheqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chengheqd['admin_id'];?>/state_id/{$chengheqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chengheqd.admin_member_id}/{$chengheqd.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xje_sfd_k>0?$xje_sfd_k:0 ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
+          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xje_sfd_y>0?$xje_sfd_y:0 ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
+          <div class="name">
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xje_sfd_l>0?$xje_sfd_l:0 ?>万元</a></div>
-          </if>
       </li>
       <li class="room-small">速贷</li>
-      <!--<li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>约见</div>
-          <div class="name">
-              <if condition="$chenghe.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghe['admin_id'];?>/state_id/{$chenghe.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghe.admin_member_id}/{$chenghe.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>-->
       <li>
           <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chengheqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chengheqd['admin_id'];?>/state_id/{$chengheqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chengheqd.admin_member_id}/{$chengheqd.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xje_sd_k>0?$xje_sd_k:0 ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
+          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xje_sd_y>0?$xje_sd_y:0 ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
+          <div class="name">
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xje_sd_l>0?$xje_sd_l:0 ?>万元</a></div>
-          </if>
       </li>
       <li class="room_room">现金贷</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
               <if condition="$chenghefk.admin_member_sun neq 0">
                   <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
@@ -533,13 +406,11 @@
       </li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $ebsum>0?$ebsum:0 ?>万元</a></div>
       </li>
       <li class="room_room">居间业务</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
               <if condition="$chenghefk.admin_member_sun neq 0">
                   <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
@@ -549,104 +420,62 @@
       </li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $ebsum>0?$ebsum:0 ?>万元</a></div>
       </li>
       <li class="room_room">抵押贷业务</li>
       <li class="room-small">速车贷</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xje_car_k>0?$xje_car_k:0  ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
+          <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xje_car_y>0?$xje_car_y:0 ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xje_car_l>0?$xje_car_l:0 ?>万元</a></div>
       </li>
-      <!-- <li>
-           <div class="tit"><i class="fa fa-line-chart"></i>回款</div>
-           <div class="name">
-               <notempty name="admin_member_danss.admin_id">
-                   <a href="/Admin/Search/index/name/回款/id/{$admin_member_danss.admin_id}/u_id/{$admin_member_danss.u_id}.html" style="color:#fff">
-                       <else/>
-                       <a href="javascript:;" style="color:#fff">
-               </notempty>
-               <img src="/Public/admin/images/no1.png">{$admin_member_danss.admin_member_id}/<span style="font-size:15px">{$admin_member_danss.hprice}</span>万元</a></div>
-       </li>-->
   </ul>
   <ul class="clearfix">
       <h2 class="h2">现金3部</h2>
       <li class="room_room">信用贷业务</li>
       <li class="room-small">速分贷</li>
-      <!--<li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>约见</div>
-          <div class="name">
-              <if condition="$chenghe.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghe['admin_id'];?>/state_id/{$chenghe.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghe.admin_member_id}/{$chenghe.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>-->
       <li>
           <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chengheqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chengheqd['admin_id'];?>/state_id/{$chengheqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chengheqd.admin_member_id}/{$chengheqd.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjs_sfd_k>0?$xjs_sfd_k:0 ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
+          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjs_sfd_y>0?$xjs_sfd_y:0 ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
+          <div class="name">
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjs_sfd_l>0?$xjs_sfd_l:0 ?>万元</a></div>
-          </if>
       </li>
       <li class="room-small">速贷</li>
-      <!--<li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>约见</div>
-          <div class="name">
-              <if condition="$chenghe.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghe['admin_id'];?>/state_id/{$chenghe.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghe.admin_member_id}/{$chenghe.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>-->
       <li>
           <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chengheqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chengheqd['admin_id'];?>/state_id/{$chengheqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chengheqd.admin_member_id}/{$chengheqd.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjs_sd_k>0?$xjs_sd_k:0 ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
+          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjs_sd_y>0?$xjs_sd_y:0 ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
+          <div class="name">
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjs_sd_l>0?$xjs_sd_l:0 ?>万元</a></div>
-          </if>
       </li>
       <li class="room_room">现金贷</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
               <if condition="$chenghefk.admin_member_sun neq 0">
                   <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
@@ -656,13 +485,11 @@
       </li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $ebsum>0?$ebsum:0 ?>万元</a></div>
       </li>
       <li class="room_room">居间业务</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
               <if condition="$chenghefk.admin_member_sun neq 0">
                   <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
@@ -672,104 +499,62 @@
       </li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $ebsum>0?$ebsum:0 ?>万元</a></div>
       </li>
       <li class="room_room">抵押贷业务</li>
       <li class="room-small">速车贷</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjs_car_k>0?$xjs_car_k:0  ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
+          <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjs_car_y>0?$xjs_car_y:0 ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjs_car_l>0?$xjs_car_l:0 ?>万元</a></div>
       </li>
-      <!-- <li>
-           <div class="tit"><i class="fa fa-line-chart"></i>回款</div>
-           <div class="name">
-               <notempty name="admin_member_danss.admin_id">
-                   <a href="/Admin/Search/index/name/回款/id/{$admin_member_danss.admin_id}/u_id/{$admin_member_danss.u_id}.html" style="color:#fff">
-                       <else/>
-                       <a href="javascript:;" style="color:#fff">
-               </notempty>
-               <img src="/Public/admin/images/no1.png">{$admin_member_danss.admin_member_id}/<span style="font-size:15px">{$admin_member_danss.hprice}</span>万元</a></div>
-       </li>-->
   </ul>
   <ul class="clearfix">
       <h2 class="h2">现金4部</h2>
       <li class="room_room">信用贷业务</li>
       <li class="room-small">速分贷</li>
-      <!--<li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>约见</div>
-          <div class="name">
-              <if condition="$chenghe.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghe['admin_id'];?>/state_id/{$chenghe.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghe.admin_member_id}/{$chenghe.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>-->
       <li>
           <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chengheqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chengheqd['admin_id'];?>/state_id/{$chengheqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chengheqd.admin_member_id}/{$chengheqd.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjf_sfd_k>0?$xjf_sfd_k:0 ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
+          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjf_sfd_y>0?$xjf_sfd_y:0 ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
+          <div class="name">
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjf_sfd_l>0?$xjf_sfd_l:0 ?>万元</a></div>
-          </if>
       </li>
       <li class="room-small">速贷</li>
-      <!--<li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>约见</div>
-          <div class="name">
-              <if condition="$chenghe.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghe['admin_id'];?>/state_id/{$chenghe.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghe.admin_member_id}/{$chenghe.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>-->
       <li>
           <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chengheqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chengheqd['admin_id'];?>/state_id/{$chengheqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chengheqd.admin_member_id}/{$chengheqd.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjf_sd_k>0?$xjf_sd_k:0 ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
+          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjf_sd_y>0?$xjf_sd_y:0 ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
+          <div class="name">
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjf_sd_l>0?$xjf_sd_l:0 ?>万元</a></div>
-          </if>
       </li>
       <li class="room_room">现金贷</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
               <if condition="$chenghefk.admin_member_sun neq 0">
                   <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
@@ -779,13 +564,11 @@
       </li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $ebsum>0?$ebsum:0 ?>万元</a></div>
       </li>
       <li class="room_room">居间业务</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
               <if condition="$chenghefk.admin_member_sun neq 0">
                   <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
@@ -795,312 +578,25 @@
       </li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $ebsum>0?$ebsum:0 ?>万元</a></div>
       </li>
       <li class="room_room">抵押贷业务</li>
       <li class="room-small">速车贷</li>
       <li>
           <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
           <div class="name">
-              <if condition="$chenghefk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $chenghefk['admin_id'];?>/state_id/{$chenghefk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$chenghefk.admin_member_id}/{$chenghefk.admin_member_sun}万元</a></div>
-          <else />
           <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjf_car_k>0?$xjf_car_k:0  ?>万元</a></div>
-          </if>
       </li>
       <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          <!--<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>-->
+          <div class="tit"><i class="fa fa-check-square-o"></i>应收</div>
+          <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjf_car_y>0?$xjf_car_y:0 ?>万元</a></div>
+      </li>
+      <li>
+          <div class="tit"><i class="fa fa-check-square-o"></i>已收</div>
           <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjf_car_l>0?$xjf_car_l:0 ?>万元</a></div>
       </li>
-      <!-- <li>
-           <div class="tit"><i class="fa fa-line-chart"></i>回款</div>
-           <div class="name">
-               <notempty name="admin_member_danss.admin_id">
-                   <a href="/Admin/Search/index/name/回款/id/{$admin_member_danss.admin_id}/u_id/{$admin_member_danss.u_id}.html" style="color:#fff">
-                       <else/>
-                       <a href="javascript:;" style="color:#fff">
-               </notempty>
-               <img src="/Public/admin/images/no1.png">{$admin_member_danss.admin_member_id}/<span style="font-size:15px">{$admin_member_danss.hprice}</span>万元</a></div>
-       </li>-->
   </ul>
-<!--            <ul class="clearfix">
-                <h2 class="h2">现金1部</h2>
-                <li class="room_room">信用贷业务</li>
-                  <li>
-                      <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-                      &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>&ndash;&gt;
-                      <div class="name">
-                          <if condition="$langyuanqd.admin_member_sun neq 0">
-                          <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuanqd['admin_id'];?>/state_id/{$langyuanqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuanqd.admin_member_id}/{$langyuanqd.admin_member_sun}万元</a></div>
-                      <else />
-                      <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-                      </if>
-                  </li>
-                  <li>
-                      <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-                      &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-                      <div class="name">
-                          <if condition="$langyuanfk.admin_member_sun neq 0">
-                          <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuanfk['admin_id'];?>/state_id/{$langyuanfk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuanfk.admin_member_id}/{$langyuanfk.admin_member_sun}万元</a></div>
-                      <else />
-                      <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-                      </if>
-                  </li>
-                <li class="room_room">现金业务-速分贷</li>
-                <li>
-                    <div class="tit"><i class="fa fa-bookmark-o"></i>库存</div>
-                    <div class="name">
-                        <if condition="$langyuan.admin_member_sun neq 0">
-                            <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuan['admin_id'];?>/state_id/{$langyuan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuan.admin_member_id}/{$langyuan.admin_member_sun}万元</a></div>
-                    <else />
-                    <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjybsum>0?$xjybsum:0 ?>万元</a></div>
-                    </if>
-                </li>
-
-                <li>
-                    <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-                    &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-                    <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjybsums>0?$xjybsums:0 ?>万元</a></div>
-                </li>
-                <li class="room_room">现金业务-速贷</li>
-                <li>
-                    <div class="tit"><i class="fa fa-bookmark-o"></i>库存</div>
-                    <div class="name">
-                        <if condition="$langyuan.admin_member_sun neq 0">
-                            <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuan['admin_id'];?>/state_id/{$langyuan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuan.admin_member_id}/{$langyuan.admin_member_sun}万元</a></div>
-                    <else />
-                    <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjybsum>0?$xjybsum:0 ?>万元</a></div>
-                    </if>
-                </li>
-                <li>
-                    <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-                    &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-                    <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjybsums>0?$xjybsums:0 ?>万元</a></div>
-                </li>
-                  &lt;!&ndash;<li>
-                      <div class="tit"><i class="fa fa-line-chart"></i>回款</div>
-                      <div class="name">
-                          <notempty name="admin_member_danss.admin_id">
-                              <a href="/Admin/Search/index/name/回款/id/{$admin_member_danss.admin_id}/u_id/{$admin_member_danss.u_id}.html" style="color:#fff">
-                                  <else/>
-                                  <a href="javascript:;" style="color:#fff">
-                          </notempty>
-                          <img src="/Public/admin/images/no1.png">{$admin_member_danss.admin_member_id}/<span style="font-size:15px">{$admin_member_danss.hprice}</span>万元</a></div>
-                  </li>&ndash;&gt;
-              </ul>
-  <ul class="clearfix">
-      <h2 class="h2">现金2部</h2>
-      <li class="room_room">信用贷业务</li>
-     &lt;!&ndash; <li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>约见</div>
-          <div class="name">
-              <if condition="$hentong.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $hentong['admin_id'];?>/state_id/{$hentong.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$hentong.admin_member_id}/{$hentong.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>&ndash;&gt;
-      <li>
-          <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name">
-              <if condition="$hentongqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $hentongqd['admin_id'];?>/state_id/{$hentongqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$hentongqd.admin_member_id}/{$hentongqd.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>
-      <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name">
-              <if condition="$langyuanfk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $hentongfk['admin_id'];?>/state_id/{$hentongfk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$hentongfk.admin_member_id}/{$hentongfk.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>
-      <li class="room_room">现金业务-速分贷</li>
-      <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name">
-              <if condition="$langyuanfk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $hentongfk['admin_id'];?>/state_id/{$hentongfk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$hentongfk.admin_member_id}/{$hentongfk.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjebsum>0?$xjebsum:0 ?>万元</a></div>
-          </if>
-      </li>
-
-      <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjebsums>0?$xjebsums:0 ?>万元</a></div>
-      </li>
-      <li class="room_room">现金业务-速贷</li>
-      <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>库存</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name">
-              <if condition="$langyuanfk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $hentongfk['admin_id'];?>/state_id/{$hentongfk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$hentongfk.admin_member_id}/{$hentongfk.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjebsum>0?$xjebsum:0 ?>万元</a></div>
-          </if>
-      </li>
-      <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjebsums>0?$xjebsums:0 ?>万元</a></div>
-      </li>
-      &lt;!&ndash;<li>
-          <div class="tit"><i class="fa fa-line-chart"></i>回款</div>
-          <div class="name">
-              <notempty name="admin_member_danss.admin_id">
-                  <a href="/Admin/Search/index/name/回款/id/{$admin_member_danss.admin_id}/u_id/{$admin_member_danss.u_id}.html" style="color:#fff">
-                      <else/>
-                      <a href="javascript:;" style="color:#fff">
-              </notempty>
-              <img src="/Public/admin/images/no1.png">{$admin_member_danss.admin_member_id}/<span style="font-size:15px">{$admin_member_danss.hprice}</span>万元</a></div>
-      </li>&ndash;&gt;
-  </ul>
-  <ul class="clearfix">
-      <h2 class="h2">现金3部</h2>
-      <li class="room_room">信用贷业务</li>
-      <li>
-          <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name">
-              <if condition="$langyuanqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuanqd['admin_id'];?>/state_id/{$langyuanqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuanqd.admin_member_id}/{$langyuanqd.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>
-      <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name">
-              <if condition="$langyuanfk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuanfk['admin_id'];?>/state_id/{$langyuanfk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuanfk.admin_member_id}/{$langyuanfk.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>
-      <li class="room_room">现金业务-速分贷</li>
-      <li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>库存</div>
-          <div class="name">
-              <if condition="$langyuan.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuan['admin_id'];?>/state_id/{$langyuan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuan.admin_member_id}/{$langyuan.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjsbsum>0?$xjsbsum:0 ?>万元</a></div>
-          </if>
-      </li>
-
-      <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjsbsums>0?$xjsbsums:0 ?>万元</a></div>
-      </li>
-      <li class="room_room">现金业务-速贷</li>
-      <li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>库存</div>
-          <div class="name">
-              <if condition="$langyuan.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuan['admin_id'];?>/state_id/{$langyuan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuan.admin_member_id}/{$langyuan.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjsbsum>0?$xjsbsum:0 ?>万元</a></div>
-          </if>
-      </li>
-      <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xjsbsums>0?$xjsbsums:0 ?>万元</a></div>
-      </li>
-      &lt;!&ndash;<li>
-          <div class="tit"><i class="fa fa-line-chart"></i>回款</div>
-          <div class="name">
-              <notempty name="admin_member_danss.admin_id">
-                  <a href="/Admin/Search/index/name/回款/id/{$admin_member_danss.admin_id}/u_id/{$admin_member_danss.u_id}.html" style="color:#fff">
-                      <else/>
-                      <a href="javascript:;" style="color:#fff">
-              </notempty>
-              <img src="/Public/admin/images/no1.png">{$admin_member_danss.admin_member_id}/<span style="font-size:15px">{$admin_member_danss.hprice}</span>万元</a></div>
-      </li>&ndash;&gt;
-  </ul>
-  <ul class="clearfix">
-      <h2 class="h2">现金4部</h2>
-      <li class="room_room">信用贷业务</li>
-      <li>
-          <div class="tit"><i class="fa fa-pencil-square-o"></i>库存</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/库存/id/{$admin_member_dan.admin_id}/state_id/{$admin_member_dan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dan.admin_member_id}/{$admin_member_dan.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name">
-              <if condition="$langyuanqd.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuanqd['admin_id'];?>/state_id/{$langyuanqd.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuanqd.admin_member_id}/{$langyuanqd.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>
-      <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name">
-              <if condition="$langyuanfk.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuanfk['admin_id'];?>/state_id/{$langyuanfk.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuanfk.admin_member_id}/{$langyuanfk.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png">0万元</a></div>
-          </if>
-      </li>
-      <li class="room_room">现金业务-速分贷</li>
-      <li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>库存</div>
-          <div class="name">
-              <if condition="$langyuan.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuan['admin_id'];?>/state_id/{$langyuan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuan.admin_member_id}/{$langyuan.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xj4bsum>0?$xj4bsum:0 ?>万元</a></div>
-          </if>
-      </li>
-
-      <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xj4bsums>0?$xj4bsums:0 ?>万元</a></div>
-      </li>
-      <li class="room_room">现金业务-速贷</li>
-      <li>
-          <div class="tit"><i class="fa fa-bookmark-o"></i>库存</div>
-          <div class="name">
-              <if condition="$langyuan.admin_member_sun neq 0">
-                  <a charset="utf-8" href="/Admin/Search/index/name/<?php echo urldecode('约见');?>/id/<?php echo $langyuan['admin_id'];?>/state_id/{$langyuan.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$langyuan.admin_member_id}/{$langyuan.admin_member_sun}万元</a></div>
-          <else />
-          <a charset="utf-8" href="/" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xj4bsum>0?$xj4bsum:0 ?>万元</a></div>
-          </if>
-      </li>
-      <li>
-          <div class="tit"><i class="fa fa-check-square-o"></i>利息</div>
-          &lt;!&ndash;<div class="name"><a href="/Admin/Search/index/name/成交/id/{$admin_member_dans.admin_id}/state_id/{$admin_member_dans.state_id}.html" style="color:#fff"><img src="/Public/admin/images/no1.png">{$admin_member_dans.admin_member_id}/{$admin_member_dans.admin_member_sun}万元</a></div>&ndash;&gt;
-          <div class="name"><a charset="utf-8" href="" style="color:#fff"><img src="/Public/admin/images/no1.png"><?php echo $xj4bsums>0?$xj4bsums:0 ?>万元</a></div>
-      </li>
-      &lt;!&ndash;<li>
-          <div class="tit"><i class="fa fa-line-chart"></i>回款</div>
-          <div class="name">
-              <notempty name="admin_member_danss.admin_id">
-                  <a href="/Admin/Search/index/name/回款/id/{$admin_member_danss.admin_id}/u_id/{$admin_member_danss.u_id}.html" style="color:#fff">
-                      <else/>
-                      <a href="javascript:;" style="color:#fff">
-              </notempty>
-              <img src="/Public/admin/images/no1.png">{$admin_member_danss.admin_member_id}/<span style="font-size:15px">{$admin_member_danss.hprice}</span>万元</a></div>
-      </li>&ndash;&gt;
-  </ul>-->
           </div>
-		  
-
-
       </div>
   </div>
   <include file="common:js" />

@@ -262,7 +262,7 @@
                     <option value="3" <?php if($data['maritalstatus']==3) echo selected ?> >离异</option>
                 </select>
             </div>
-            <div class="grounp">
+            <div class="grounp daugter">
                 <label for="input7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>子女</label>
                 <input type="text" name="children" value="{$data['children']}" placeholder="必填" id="input7" class="input" required>
             </div>
@@ -322,12 +322,12 @@
         <h2 class="h2-wife">配偶信息</h2>
         <div class="border border-wife" style="height: 138px;">
             <div class="grounp">
-                <label for="input19">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>配偶姓名</label>
-                <input type="text" name="peioname" placeholder="必填" value="{$data['peioname']}" id="input19" class="input">
+                <label for="input19">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span theWife">*</span>配偶姓名</label>
+                <input type="text" name="peioname" placeholder="必填" value="{$data['peioname']}" id="input19" class="input" required>
             </div>
             <div class="grounp">
                 <label for="input20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>手机号码</label>
-                <input type="number" name="peiotel" value="{$data['peiotel']}" placeholder="必填" id="input20" class="input">
+                <input type="number" name="peiotel" value="{$data['peiotel']}" placeholder="必填" id="input20" class="input" required>
             </div>
             <div class="grounp">
                 <label for="input21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单位名称</label>
@@ -417,7 +417,7 @@
         </div>
         <input type="hidden" name="id" value="{$data['id']}">
         <input type="hidden" name="t" value="1">
-        <input type="submit" id="tjbtn" value="提交" class="button">
+        <!--<input type="submit" id="tjbtn" value="提交" class="button">-->
     </form>
 </div>
 <include file="common:js" />
@@ -481,9 +481,30 @@
     var flags=true;
     $('#get').change(function (e) {
         if ($('#get').find('option:selected').val()==2 && flag) {
+            $('#input7').attr('required',false);
+            $('.theWife').html('*').parent().next().attr({
+                'placeholder':'必填',
+                'required':false
+            });
+            $('#input20').attr({
+                'placeholder':'选填',
+                'required':false
+            }).prev().children().html('&nbsp;');
+            $('.daugter').hide();
             yes();
             flag=false;
         }else if ($('#get').find('option:selected').val()!=2) {
+            $('#input7').attr('required',true);
+            $('.theWife').html('*').parent().next().attr({
+                'placeholder':'必填',
+                'required':true
+            });
+            $('#input20').attr({
+                'placeholder':'必填',
+                'required':true
+            }).prev().children().html('*');
+            $('.daugter').show();
+            $('.h2-wife,.border-wife').show();
             no();
 //            $('.a,.b,.c,.d').remove();
             flag=true;
@@ -519,6 +540,16 @@
                     'paddingBottom':'16px'
                 })
             });
+        if ($('#get').find('option:selected').val()==3) {
+            $('.theWife').html('&nbsp;').parent().next().attr({
+                'placeholder':'选填',
+                'required':false
+            });
+            $('#input20').attr({
+                'placeholder':'选填',
+                'required':false
+            }).prev().children().html('&nbsp;');
+        }
     }
 
     $("#input41").change(function(){

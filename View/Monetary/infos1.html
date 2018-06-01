@@ -114,7 +114,7 @@
         line-height: 42px;
         margin-left: 30px;
         position: relative;
-        bottom: 6px;
+        bottom: 3px;
         border: none;
         outline: none;
         font-size: 21px;
@@ -198,12 +198,12 @@
         </div>
         <span class="guan">现金业务申请表</span>
     </div>
-    <form action="/Admin/Apply/upd" method="post" id="form" onsubmit="return checkform()" enctype="multipart/form-data">
+    <form action="/Admin/Apply/add" method="post" id="form" onsubmit="return checkform()">
         <h2>申请人信息</h2>
         <div class="border border_specialy" style="height: 553px;">
             <div class="grounp">
                 <label for="input1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>申请人姓名</label>
-                <input name="name" type="text" placeholder="必填" value="{$data['name']}" id="input1" class="input" required>
+                <input name="username" type="text" placeholder="必填" value="{$data['username']}" id="input1" class="input" required>
             </div>
             <div class="grounp">
                 <label for="input40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>性别</label>
@@ -223,11 +223,11 @@
             </div>
             <div class="grounp">
                 <label for="input3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>身份证号码</label>
-                <input type="text" name="cardid" placeholder="必填" value="{$data['cardid']}" id="input3" class="input" required>
+                <input type="number" name="cardId" placeholder="必填" value="{$data['cardid']}" id="input3" class="input" required>
             </div>
             <div class="grounp">
                 <label for="input4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>申请金额</label>
-                <input type="number" name="money" placeholder="必填" value="{$data['money']}" id="input4" class="input" required style="width:160px;">&nbsp;&nbsp;<span style="font-size: 22px;color: #747474;">万元</span>
+                <input type="number" name="loan" placeholder="必填" value="{$data['loan']}" id="input4" class="input" required>
             </div>
             <div class="grounp">
                 <label for="input5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;借款用途</label>
@@ -249,18 +249,16 @@
                 <div class="input divs" style="width: 455px;overflow: hidden;">
                     <label for="room" style="bottom: -5px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;照片
                         <input class="inputs" id="room" name="photo"
-                               onchange="showPicture(this)" type="file" value="{$data['photo']}" />
-                        <input type="hidden" name="oldphoto" value="{$data['photo']}">
+                               onchange="showPicture(this)" type="file"/>
                     </label>
                 </div>
             </div>
             <div class="two">
-                <!-- <img id="imgss" width="450" height="528" src="http://47.92.119.237{$data['photo']}"/> -->
-                <img id="imgss" width="450" height="528" src="http://www.crm.com{$data['photo']}"/>
+                <img id="imgss" width="450" height="528" src="http://47.92.119.237{$data['photo']}"/>
             </div>
             <!--<script typet="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>-->
         </div>
-        <div class="border" style="height:317px;">
+        <div class="border" style="height: 317px;">
             <div class="grounp">
                 <label for="input10">&nbsp;来现居住地时间</label>
                 <input type="text" name="cometime"  value="{$data['cometime']}" placeholder="选填" id="input10" class="input">
@@ -374,85 +372,29 @@
         <div class="border">
             <div class="grounp">
                 <label for="input41">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;部门</label>
-                <select name="branch" id="input41" style="width: 250px;" class="bumen sea select" onfocus="this.defOpt=this.selectedIndex" onchange="this.selectedIndex=this.defOpt;">
+                <select name="admin_ids" id="input41" style="width: 250px;" class="bumen sea select" onchange="fp(this.value)">
                                     <option value='请选择' disabled selected>请选择</option>
-                                    <option value=16 <?php echo $data['branch']==16?selected:'' ?> >宝安1部总监</option>
-                                    <option value=17 <?php echo $data['branch']==17?selected:'' ?> >宝安1部</option>
-                                    <option value=18 <?php echo $data['branch']==18?selected:'' ?> >宝安2部总监</option>
-                                    <option value=19 <?php echo $data['branch']==19?selected:'' ?> >宝安2部</option>
-                                    <option value=30 <?php echo $data['branch']==30?selected:'' ?> >现金1部总监</option>
-                                    <option value=29 <?php echo $data['branch']==29?selected:'' ?> >现金1部</option>
-                                    <option value=7 <?php echo $data['branch']==7?selected:'' ?> >现金2部总监</option>
-                                    <option value=8 <?php echo $data['branch']==8?selected:'' ?> >现金2部</option>
-                                    <option value=25 <?php echo $data['branch']==25?selected:'' ?> >现金3部总监</option>
-                                    <option value=9 <?php echo $data['branch']==9?selected:'' ?> >现金3部</option>
-                                    <option value=33 <?php echo $data['branch']==33?selected:'' ?> >现金4部</option>
+                                    <option value=7 <?php if($data['admin_ids']==7) echo selected ?>>丽湾分部总监</option>
+                                    <option value=8 <?php if($data['admin_ids']==8) echo selected ?>>丽湾分部</option>
+                                    <option value=16 <?php if($data['admin_ids']==16) echo selected ?>>朗苑金融门店部总监</option>
+                                    <option value=17 <?php if($data['admin_ids']==17) echo selected ?>>朗苑金融门店部</option>
+                                    <option value=18 <?php if($data['admin_ids']==18) echo selected ?>>诚和金融门店部总监</option>
+                                    <option value=19 <?php if($data['admin_ids']==19) echo selected ?>>诚和金融门店部</option>
+                                    <option value=30 <?php if($data['admin_ids']==30) echo selected ?>>现金部经理</option>
+                                    <option value=29 <?php if($data['admin_ids']==29) echo selected ?>>现金部</option>
                  </select>
             </div>
             <div class="grounp">
                 <label for="input43">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="span">*</span>业务员</label>
-                <select  class="members sea select" name="Salesman">
-                                   <option value="{$data['salesman']}">{$data['admin_name']}</option>
+                <select  class="members sea select" name="admin_id">
+                                   <option value=0>{$data['admin_name']}</option>
                                 </select>
             </div>
         </div>
-        <input type="hidden" name="id" value="{$data['id']}">
-        <input type="submit" id="tjbtn" value="提交" class="button">
+       <!--  <input type="submit" id="tjbtn" value="提交" class="button"> -->
     </form>
 </div>
 <include file="common:js" />
-<script>
-  
-    flags=true;
-    function checkform(){
-        if(flags){
-            flags=false;
-            $("#tjbtn").hide();
-            return true;
-        }else{
-            alert("不要重复提交");
-            return false;
-        }
-    }
-    
-    function showPicture(img) {
-        var objUrl = getObjectURL(img.files[0]);
-        console.log(getObjectURL(img.files[0]))
-        if (objUrl) {
-            $("#imgss").attr("src", objUrl);
-            $("#imgss").width(450).height(528);
-        }
-    }
-
-    function getObjectURL(file) {
-        var url = null;
-        if (window.createObjectURL != undefined) { // basic
-            url = window.createObjectURL(file);
-        } else if (window.URL != undefined) { // mozilla(firefox)
-            url = window.URL.createObjectURL(file);
-        } else if (window.webkitURL != undefined) { // webkit or chrome
-            url = window.webkitURL.createObjectURL(file);
-        }
-
-        return url;
-    }
-
-    $("#tjbtn").click(function(){
-        // alert("11")
-    });
-
-    $("#input2").blur(function(){
-        var phone=$(this).val();
-        $.get('/Admin/Apply/selectphone',{phone:phone},function(data){
-            if(data==1){
-                $("#lyhs").show();
-            }else{
-                $("#lyhs").hide();
-            }
-        });
-    });
-
-</script>
 </body>
 </html>
 

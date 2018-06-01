@@ -154,7 +154,7 @@
                         <a class="hq btn btn1  present" style="width:38%;background: #66cd00;color:#fff;margin-left:30px;" onclick="func_hq()" name="" title="" href="javascript:void(0)">放款</a>
                     </div>
                     <!-- <div class="form-group" style="text-align: center;">
-                        <a href="/Admin/CarLoan/over?state_id=33&id=" target="_blank" class="btn btn1 over present" style="width:38%;background: #66cd00;color:#fff;margin-left:30px;">完成</a>
+                        <a href="/Admin/CarLoan/over?state_id=32&id=" target="_blank" class="btn btn1 over present" style="width:38%;background: #66cd00;color:#fff;margin-left:30px;">完成</a>
                     </div> -->
                 </div>
             </div>
@@ -390,7 +390,7 @@
        $.post('/Admin/CarLoan/Carsix',{newarr:newarr,fbje:fbje,spje:spje,cid:cid,fkrq:fkrq,jkdq:jkdq,bumen:bumen,members:members,hklv:hklv,cbj:cbj,cbj_type:cbj_type},function(data){
             if(data=="放款成功"){
                  alert(data);
-                 window.location.href="/Admin/CarLoan/over?state_id=33&id="+cid;
+                 window.location.href="/Admin/CarLoan/over?state_id=32&id="+cid;
             }else{
                 alert(data);
             }

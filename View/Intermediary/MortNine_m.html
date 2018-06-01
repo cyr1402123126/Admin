@@ -219,7 +219,7 @@
                             <h4 class="h4">抵押</h4>
                             <form action="/Admin/Intermediary/mPublicFun" method="post" id="info_form2" enctype="multipart/form-data">
                                 <div style="margin-left:40px;font-size: 18px;margin-bottom:10px;">
-                                    抵押类型：<select type="text" style="margin-left: 41px;width: 90px;" name="mortgage_sl_address">
+                                    抵押类型：<select type="text" style="margin-left: 41px;width: 90px;height: 30px;" name="mortgage_sl_address">
                                     <option value="0">请选择</option>
                                     <option value="1" <?php echo  $data['mortgage_sl_address']==1?'selected':'' ?>>民间</option>
                                     <option value="2" <?php echo  $data['mortgage_sl_address']==2?'selected':'' ?>>银行</option>
@@ -235,7 +235,7 @@
                                 </div>
                                 <div style="margin-left: 39px;">
                                     <label class="property" >抵押函：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                    <input style="left: 62px;position: relative;" type="file" id="path70" name="letter_mortgage">
+                                    <input style="left: 68px;position: relative;" type="file" id="path70" name="letter_mortgage">
                                     <input style="left: 131px;bottom: 37px;" type="button" class="choose" value="选择文件" onclick="path70.click()">
                                     <a href="/Admin/Intermediary/preview?zd=letter_mortgage&id=" target="_blank" class="btn btn1 preview" style="position:relative;top: -37px;left: 275px;" name="letter_mortgage">预览</a>
                                 </div>

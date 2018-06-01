@@ -37,7 +37,7 @@
 
         <li class='treeview <?php if($isUclient == 'Monetary'){?>active<?php }?>'>
         <a href="#">
-            <i class="fa fa-dashboard"></i> <span>冠成自有现金业务</span> <i class="fa fa-angle-left pull-right"></i>
+            <i class="fa fa-dashboard"></i> <span>冠成信用贷业务</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
             <?php if(in_array('82',$_SESSION['level'])){?>
@@ -74,6 +74,10 @@
         </li>
 
 
+
+
+
+
 	  <?php if(in_array('50',$_SESSION['level'])){?>
 	  <li class="treeview <?php if($isNavs == 'Admin'){?>active<?php }?>">
           <a href="#">
@@ -86,7 +90,6 @@
 			 <?php if(in_array('55',$_SESSION['level'])){?>
 			  <li><a href="/Admin/Admin/rank"><i class="fa fa-circle-o"></i> 权限列表</a></li>
 			 <?php }?> 
-          <li><a href="/Admin/Admin/sqrank"><i class="fa fa-circle-o"></i> 审批权限</a></li>
           </ul>
       </li> 
 	  <?php }?>
@@ -187,29 +190,16 @@
        </li> 
 	  <?php }?>
 
-    <?php if(in_array('71',$levels)){?>
-      <li class="treeview">
-          <a href="#">
-              <i class="fa fa-dashboard"></i> <span>录音管理</span> <i class="fa fa-angle-left pull-right"></i>
-          </a>
-          <ul class="treeview-menu">
-              <li><a href="/Admin/Record/index"><i class="fa fa-circle-o"></i> 录音列表</a></li>
-          </ul>
-      </li>
-    <?php }?>
-
-    <?php if(in_array('71',$levels)){?>
-      <li class="treeview <?php if($isUclient == 'Finance'){?>active<?php }?>">
-          <a href="#">
-              <i class="fa fa-dashboard"></i> <span>财务管理</span> <i class="fa fa-angle-left pull-right"></i>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="/Admin/Finance/index"><i class="fa fa-circle-o"></i>财务列表</a></li>
-            <li><a href="/Admin/Finance/branch"><i class="fa fa-circle-o"></i>分部财务</a></li>
-            <li><a href="/Admin/Finance/statistics"><i class="fa fa-circle-o"></i>提成统计</a></li>
-          </ul>
-      </li>
-    <?php }?>
+        <?php if(in_array('71',$levels)){?>
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-dashboard"></i> <span>录音管理</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href=" /Admin/Record/index"><i class="fa fa-circle-o"></i> 录音列表</a></li>
+            </ul>
+        </li>
+        <?php }?>
 
 
         <!-- <li class="treeview">

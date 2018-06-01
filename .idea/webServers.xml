@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ca07152d-a236-4d54-a869-221cbeb8abff" name="pc和平板后台管理" url="http://47.92.119.237">
+        <fileTransfer host="47.92.119.237" port="2323">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="2323" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

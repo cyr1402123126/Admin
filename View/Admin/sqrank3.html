@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>后台管理</title>
+    <include file="common:css" />
+    <link rel="stylesheet" href="__PUBLIC__/admin/money/information.css">
+    <script src="__PUBLIC__/admin/js/branch.js"></script>
+    <style>
+        form {
+            font-size: 15px;
+        }
+        .table {
+            width: 100%;
+            font-size: 15px;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+        th {
+            width: 5%;
+            background: #2a89cd;
+            text-align: center;
+            color: #fff;
+        }
+        tr:nth-child(2n) {
+            background:#f6f6f6;
+        }
+        table,.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+            border: 1px solid #e6e6e6;
+        }
+        .table-bordered {
+            border: 1px solid #e6e6e6;
+        }
+        .information input[type=checkbox] {
+            margin-right: 0;
+        }
+        input[type=checkbox] {
+            zoom:150%;
+            cursor: pointer;
+        }
+    </style>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <!-- 头部 -->
+    <include file="common:head" />
+    <!-- 头部结束
+    <!-- 左侧 -->
+    <include file="common:side" />
+    <!-- 左侧结束 -->
+
+    <div class="content-wrapper">
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box">
+                     <h3 class="box-title">审批权限分配</h3>
+                    <div class="information">
+                    <form action="/Admin/Admin/sqrank" method="post">
+
+                        <p>部门：<select style="height: 25px;width: 200px;" id="branch" class="bumen input2" name="branchs" onchange="fp(this.value)"></select>
+                        </p>
+                        <input type="hidden" id="branch_val" value="{$data['branchs']}">
+                        <input type="hidden" class="ywys" value="{$data['salesmans']}">
+                        <p>人员：<select style="height: 25px;width: 200px;" class="input2" value="" id="ywy" name="salesmans"><option value='{$data.salesman}'><?php echo $data['salesmans']==''? "请选择":$data['salesmans'] ?></option></select>
+                        </p>
+                        <!--<p>人员：<select style="height: 25px;width: 200px;" class="input2" value="" id="ywy" name="salesmans"><option value='{$data.salesman}'><?php echo $data['salesmans']==''? "请选择":$data['salesmans'] ?></option></select>
+                        </p>
+                        <p>权限：<label><input type="checkbox" class="cb" name="sp_level[]" value="8">填写申请表</label>
+                            <label><input type="checkbox" class="cb" name="sp_level[]" value="1">贷前资料收集</label>
+                            <label><input type="checkbox" class="cb" name="sp_level[]" value="2">客户信息查询</label>
+                            <label><input type="checkbox" class="cb" name="sp_level[]" value="3">产品确认</label>
+                            <label><input type="checkbox" class="cb" name="sp_level[]" value="4">考察</label>
+                            <label><input type="checkbox" class="cb" name="sp_level[]" value="5">审贷</label>
+                            <label><input type="checkbox" class="cb" name="sp_level[]" value="6">签约</label>
+                            <label><input type="checkbox" class="cb" name="sp_level[]" value="7">放款</label>
+                            <label><input type="checkbox" class="cb" name="sp_level[]" value="9">客户列表</label>
+                        </p>-->
+                        <div style="width: 90%;text-align: center;">
+                            <table  border="1" id="lyt" cellpadding="80px" class="table table-bordered table-hover">
+                                <!--<thead>
+                                <tr>
+                                    <th>权限</th>
+                                    <th>填写申请表</th>
+                                    <th>贷前资料收集</th>
+                                    <th>客户信息查询</th>
+                                    <th>产品确认</th>
+                                    <th>考察</th>
+                                    <th>审贷</th>
+                                    <th>签约</th>
+                                    <th>放款</th>
+                                    <th>客户列表</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>张三</td>
+                                    <td><label><input type="checkbox" class="cb" name="sp_level[]" value="8"></label></td>
+                                    <td><label><input type="checkbox" class="cb" name="sp_level[]" value="1"></label></td>
+                                    <td><label><input type="checkbox" class="cb" name="sp_level[]" value="2"></label></td>
+                                    <td><label><input type="checkbox" class="cb" name="sp_level[]" value="3"></label></td>
+                                    <td><label><input type="checkbox" class="cb" name="sp_level[]" value="4"></label></td>
+                                    <td><label><input type="checkbox" class="cb" name="sp_level[]" value="5"></label></td>
+                                    <td><label><input type="checkbox" class="cb" name="sp_level[]" value="6"></label></td>
+                                    <td><label><input type="checkbox" class="cb" name="sp_level[]" value="7"></label></td>
+                                    <td><label><input type="checkbox" class="cb" name="sp_level[]" value="9"></label></td>
+                                </tr>
+                                </tbody>-->
+                            </table>
+                            <input type="submit" value="提&nbsp;&nbsp;交" class="tjs" style="margin: auto;">
+                        </div>
+                    </form>
+                    </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</div>
+
+<include file="common:js" />
+
+<script>
+    function fp(rid){
+         if(rid=='33'){
+            gyd();
+        }else{
+           $.post("/Admin/Apply/memberss",{rid,rid},function(data){
+            $("#lyt").empty();
+               $('#lyt').append('<thead class="thead"> <tr> <th>权限</th> <th>填写申请表</th> <th>贷前资料收集</th> <th>客户信息查询</th> <th>产品确认</th> <th>考察</th> <th>审贷</th> <th>签约</th> <th>放款</th> <th>客户列表</th> </tr> </thead>');
+            for(i=0;i<data.length;i++){
+                // $("#ywy").append("<option value="+data[i]['id']+">"+data[i]['username']+"</option>");
+                $(".thead").after('<tbody> <tr> <td>'+data[i]['username']+'</td> <td><label><input type="checkbox" class="cb" name="sp_level[]" value="8"></label></td> <td><label><input type="checkbox" class="cb" name="sp_level[]" value="1"></label></td> <td><label><input type="checkbox" class="cb" name="sp_level[]" value="2"></label></td> <td><label><input type="checkbox" class="cb" name="sp_level[]" value="3"></label></td> <td><label><input type="checkbox" class="cb" name="sp_level[]" value="4"></label></td> <td><label><input type="checkbox" class="cb" name="sp_level[]" value="5"></label></td> <td><label><input type="checkbox" class="cb" name="sp_level[]" value="6"></label></td> <td><label><input type="checkbox" class="cb" name="sp_level[]" value="7"></label></td> <td><label><input type="checkbox" class="cb" name="sp_level[]" value="9"></label></td> </tr> </tbody>');
+            }
+            info();
+          })
+           
+        }
+    }
+
+    $(function(){
+        rid=$(".bumen").val();
+        fp(rid);
+
+    });
+     //加载部门
+    window.onload=(function(){
+        var b_val=$("#branch_val").val();
+         branchs(b_val); 
+    });
+
+    $("#ywy").change(function(){
+        info();
+    });
+
+    function info(){
+        var branch=$("#branch").val();
+        $.get('/Admin/Admin/sqrank',{branch:branch},function(data){
+            // var arr='123456789';
+            var Arr=[];
+            for (var i=0;i<data.length;i++) {
+                Arr.push(data[i].sp_level.split(','));
+                for (var j=0;j<Arr[i].length;j++) {
+                    $('tbody').find('tr').eq(i).find('td').each(function () {
+                        console.log(Arr[i][j])
+                        if ($(this).find('input').val()==Arr[i][j]) {
+                            $(this).find('input').attr('checked','checked');
+                        }
+                    })
+                }
+
+            }
+            console.log(data)
+        });
+    }
+
+
+</script>
+</body>
+</html>
