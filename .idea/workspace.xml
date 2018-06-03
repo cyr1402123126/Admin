@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e47232b-3496-4266-92b2-bbf07e721777" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/View/Admin/addindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Admin/addindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Imports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Imports/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="addindex.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addindex.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/View/Admin/addindex.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            <state relative-caret-position="270">
+              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/View/Imports/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -50,6 +60,7 @@
         <option value="$PROJECT_DIR$/View/yewualls.html" />
         <option value="$PROJECT_DIR$/View/Intermediary/MortEleven_m.html" />
         <option value="$PROJECT_DIR$/View/Admin/addindex.html" />
+        <option value="$PROJECT_DIR$/View/Imports/index.html" />
       </list>
     </option>
   </component>
@@ -92,7 +103,7 @@
               <item name="Admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="Imports" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -140,19 +151,23 @@
       <workItem from="1527214505369" duration="2264000" />
       <workItem from="1527216795377" duration="61000" />
       <workItem from="1527216868074" duration="9000" />
-      <workItem from="1527233991871" duration="2361000" />
+      <workItem from="1527233991871" duration="2420000" />
+      <workItem from="1527473484816" duration="2157000" />
+      <workItem from="1527844556171" duration="1264000" />
+      <workItem from="1527854836657" duration="23000" />
+      <workItem from="1528022138650" duration="11000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4695000" />
+    <option name="totallyTimeSpent" value="8209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.1427614" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19101876" />
+      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.113270774" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20174263" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -192,13 +207,52 @@
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/View/Admin/addindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Imports/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3024">
+          <caret line="112" column="23" lean-forward="true" selection-start-line="112" selection-start-column="23" selection-end-line="112" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Admin/addindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Imports/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2834">
+          <caret line="109" column="24" selection-start-line="109" selection-start-column="24" selection-end-line="109" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Admin/addindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="55" lean-forward="true" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Admin/addindex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/View/Intermediary/MortEleven_m.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4972">
           <caret line="226" selection-start-line="226" selection-end-line="226" />
-          <folding>
-            <element signature="n#style#0;n#input#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -206,9 +260,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4972">
           <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
-          <folding>
-            <element signature="n#style#0;n#input#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -216,9 +267,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4950">
           <caret line="225" column="26" lean-forward="true" selection-start-line="225" selection-start-column="26" selection-end-line="225" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#input#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -228,9 +276,6 @@
           <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Conf/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Common/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -243,16 +288,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="916">
           <caret line="227" column="22" selection-start-line="227" selection-start-column="22" selection-end-line="227" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#input#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/View/Admin/addindex.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        <state relative-caret-position="270">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Imports/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
         </state>
       </provider>
     </entry>
